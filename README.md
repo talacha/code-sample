@@ -31,4 +31,33 @@ Notice the use of the demo folder. Notice how we cap tags to 10:
   </div>
 ```
 
+Use of grid display:
 
+```scss
+.view-group-members-container {
+  .group-membership-row {
+    display: grid;
+    grid-template-areas: "member products operations";
+    grid-template-columns: 45% 45% 10%;
+    padding: 14px 8px;
+
+    .member {
+      grid-area: member;
+    }
+
+    .products {
+      grid-area: products;
+    }
+
+    .operations {
+      grid-area: operations;
+    }
+
+    &-header {
+      padding: $sp-xxxs 0;
+    }
+  }
+}
+```
+
+Feel free to poke around and do not hesitate to reach out.
