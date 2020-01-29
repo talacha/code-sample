@@ -73,7 +73,8 @@ class NodeEmbedBlock extends BlockBase implements ContainerFactoryPluginInterfac
       $configuration,
       $plugin_id,
       $plugin_definition,
-      $container->get('entity_display.repository')
+      $container->get('entity_display.repository'),
+      $container->get('entity_type.manager')
     );
   }
 
