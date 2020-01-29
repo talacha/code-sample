@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/phase2/pattern-lab-starter.svg?branch=master)](https://travis-ci.org/phase2/pattern-lab-starter)
-
 # Prerequisites
 
 - [Node](https://nodejs.org) v6 + (v4 might work, no promises)

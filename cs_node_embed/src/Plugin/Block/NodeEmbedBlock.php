@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\bar\Plugin\Block;
+namespace Drupal\cs_node_embed\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
