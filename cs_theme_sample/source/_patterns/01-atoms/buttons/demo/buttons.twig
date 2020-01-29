@@ -1,0 +1,60 @@
+<div class="sg-buttons container">
+  <div class="input-button-list">
+    {% for input in inputs %}
+      {% if input.heading %}
+        <h1>{{ input.heading }}</h1>
+      {% endif %}
+      {% if input.dark_bg %}<span class="sg-dark-bg">{% endif %}
+      {% if input.heading == 'File attachment button' %}
+        {% include '@atoms_reborn/buttons/_file-attachment-button.twig' with {
+            'attributes': input.attributes,
+            'children': input.children,
+          }
+        %}
+      {% else %}
+        {% include '@atoms_reborn/buttons/_button.twig' with {
+            'attributes': input.attributes,
+            'children': input.children,
+          }
+        %}
+      {% endif %}
+      {% if input.dark_bg %}</span>{% endif %}
+    {% endfor %}
+  </div>
+  <div class="link-button-list">
+    {% for link in links %}
+      {% if link.heading %}
+        <h1>{{ link.heading }}</h1>
+      {% endif %}
+      {% if link.dark_bg %}<span class="sg-dark-bg">{% endif %}
+      <a href="#"{{ link.attributes }}>{{ link.text }}</a>
+      {% if link.dark_bg %}</span>{% endif %}
+    {% endfor %}
+  </div>
+  <div class="button-list">
+    {% for button in buttons %}
+      {% if button.heading %}
+        <h1>{{ button.heading }}</h1>
+      {% endif %}
+      {% if button.dark_bg %}<span class="sg-dark-bg">{% endif %}
+      <button{{ button.attributes }}>{{ button.text }}</button>
+      {% if button.dark_bg %}</span>{% endif %}
+    {% endfor %}
+  </div>
+  <div class="special-cases">
+    {% for special in specials %}
+      {% if special.heading %}
+        <h1>{{ special.heading }}</h1>
+      {% endif %}
+      {% if special.text == 'Expand All' or special.text == 'Collapse All' %}
+        <button{{ special.attributes }}>{{ special.text }}</button>
+      {% else %}
+        <a href="#"{{ special.attributes }}>{{ special.text }}</a>
+      {% endif %}
+      {# Add some space between rows of buttons. #}
+      {% if loop.index is divisible by(4) %}
+        <br /><br />
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

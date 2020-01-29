@@ -1,0 +1,69 @@
+.form-wrapper__node-form {
+
+  .input-textfield {
+
+    margin-bottom: $sp-m;
+
+    &__input {
+      width: $sc-m;
+    }
+  }
+
+  .form-select__select {
+    // Override chosen width.
+    width: $sc-m !important; /* stylelint-disable-line declaration-no-important */
+  }
+
+  // Non-chosen single select lists.
+  .form-select-list {
+    width: $sc-m;
+  }
+
+  .chosen-container-multi {
+    min-width: $sc-m;
+    width: $sc-m;
+  }
+
+  .field--widget-wdc-icon-with-links-widget {
+    .file-upload-button-container {
+      @include secondary-button($button-secondary-padding--medium, $fs-xs, $button-primary-padding--medium);
+    }
+
+    .form-managed-file {
+      @include managedFileOnForm();
+    }
+
+    .file-attachment {
+      display: inline-block;
+
+      &__link {
+        @include text-styles($fs-body, $fw-medium, 1);
+        flex-wrap: nowrap;
+        background: none;
+        margin: 0 4px 0 0;
+        padding: 0;
+        // 268px is the space after all other spacing in the container is
+        // accounted for.  336px is the container size.  Math is:
+        // 336px - 32px spacing from clear row button - 16px spacing for remove
+        // file button - 16px remove file button size - 4px spacing from file
+        // name text to file remove button.
+        max-width: 268px;
+      }
+    }
+
+    // Display the spinner in place of the button.
+    .ajax-progress {
+      position: relative;
+      right: 0;
+      padding: 0;
+    }
+  }
+
+  .field--name-skip-notifications {
+    margin-bottom: $sp-m;
+  }
+
+  .form-actions a.button {
+    margin-right: $sp-xxxs;
+  }
+}

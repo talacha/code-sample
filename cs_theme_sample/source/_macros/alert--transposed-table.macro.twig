@@ -1,0 +1,34 @@
+{#
+/**
+ * This macro mashes up the information in content.group_alert_resolution for
+ * customer alerts and services alerts.
+ * The information is then displayed in the "Resolution" table row.
+ *
+ * @see node--alert-customer.html.twig
+ * @see node--alert-services.html.twig
+*/
+#}
+{% macro summary(data) %}
+
+  {% set resolution_data = {
+    target_date:          data.field_alert_target_date.0['#text'],
+    target_date_label:    data.field_alert_target_date['#title'],
+    resolved_date:        data.field_alert_resolved_date.0['#text'],
+    resolved_date_label:  data.field_alert_resolved_date['#title'],
+    alert_resolution:     data|without('#title', 'field_alert_target_date', 'field_alert_resolved_date')
+  } %}
+  
+  {% set resolution_summary %}
+    {% if resolution_data.target_date %}
+      <div class="transposed-table__target-date-label">{{ resolution_data.target_date_label }}</div>
+      <div>{{ resolution_data.target_date }}</div>
+    {% endif %}
+    {% if resolution_data.resolved_date %}
+      <div class="transposed-table__resolved-date-label">{{ resolution_data.resolved_date_label }}</div>
+      <div>{{ resolution_data.resolved_date }}</div>
+    {% endif %}
+    {{ resolution_data.alert_resolution }}
+  {% endset %}
+
+  {{ resolution_summary }}
+{% endmacro %}

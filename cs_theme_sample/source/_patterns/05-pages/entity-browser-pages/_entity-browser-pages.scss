@@ -1,0 +1,119 @@
+// Style tabs like menu local tasks. Unfortunately, a lot of the markup for
+// entity browser tabs is added via JS, so there's no true template to work off
+// of.
+.eb-tabs {
+
+  ul {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: $sp-l;
+  }
+
+  li {
+    display: inline-block;
+    border-right: 1px solid $c-border-primary;
+    line-height: .8;
+
+    &:first-child {
+      a {
+        margin-left: 0;
+      }
+    }
+
+    &:last-child {
+      border-right: none;
+    }
+
+    a {
+      padding-bottom: 3px;
+      margin: 0 10px 0 6px;
+      color: $c-link-secondary;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        background: none;
+        color: $c-link-secondary--hover;
+      }
+    }
+
+    &.is-active {
+      a {
+        border-bottom: 2px solid $tc-blueberry--500;
+        color: $c-link-secondary--active;
+        font-weight: $fw-medium;
+      }
+    }
+
+  }
+}
+
+.entity-browser-form {
+  // Taken from entity browser's tab CSS file, which we no longer include.
+  input.tab {
+    @include visibility-hidden();
+  }
+
+  .form-item {
+    margin-bottom: $sp-m;
+
+    &.checkbox-container {
+      margin-bottom: 0;
+    }
+  }
+
+  .input-textfield__input {
+    width: $sc-m;
+    margin-bottom: $sp-xxs;
+  }
+
+  .input-search__input {
+    width: $sc-m;
+  }
+
+  .field-multiple-table {
+    margin-bottom: $sp-m;
+
+    .input-textfield__input {
+      width: 100%;
+      margin-bottom: 0;
+    }
+
+    .form-item {
+      margin-bottom: 0;
+    }
+
+    .multivalue-field-container,
+    .multi-column-display {
+      grid-template-columns: 1fr 128px;
+      -ms-grid-columns: 1fr 16px 128px; /* stylelint-disable-line */
+    }
+
+    thead tr,
+    tbody tr {
+      grid-template-columns: 48px 1fr;
+
+      > * {
+        display: block;
+      }
+    }
+  }
+
+  .field--type-field-video-thumbnail-time {
+    .input-textfield__input {
+      width: 128px;
+    }
+  }
+
+  .file-upload-button-container {
+    margin-bottom: $sp-xxs;
+  }
+
+  // Hide the submit button.
+  .views-exposed-form {
+    .form-actions {
+      @include visibility-hidden();
+    }
+  }
+}

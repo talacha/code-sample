@@ -1,0 +1,26 @@
+<div class="layout__container--login">
+
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+    <div class="layout__logo--login"></div>
+    <div class="layout__content">
+      {%  if pl %}
+        {% embed "@templates_reborn/login-template/_login-content.twig" with {
+          'attributes': main_content.attributes,
+          'content_type': main_content.content_type
+        } %}
+        {% endembed %}
+      {%  else %}
+        {{ main_content }}
+      {%  endif %}
+    </div>
+  </main>
+
+  {% include "@organisms_reborn/_site-footer.twig" with {
+    'footer_first': footer_first,
+    'footer_second': footer_second,
+    'login_page': TRUE
+  }
+  %}
+
+</div>

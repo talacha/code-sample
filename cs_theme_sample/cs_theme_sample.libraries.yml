@@ -1,0 +1,54 @@
+core:
+  css:
+    theme:
+      dest/style.css:
+        preprocess: true
+  js:
+    dest/script.js:
+      preprocess: true
+    js/main-navigation.js: {}
+  dependencies:
+    - superfish/superfish
+    - facets/drupal.facets.checkbox-widget
+
+slick:
+  version: 1.6.0
+  css:
+    base:
+      /libraries/slick/slick/slick.css: {}
+      /libraries/slick/slick/slick-theme.css: {}
+  js:
+    /libraries/slick/slick/slick.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/jquery.once
+
+entityBrowser:
+  version: 1.0
+  js:
+    js/entity-browser-view.js: {}
+
+product-menu:
+  version: 1.0
+  js:
+    js/vertical-tabs.js: {}
+
+noScrolling:
+  version: 1.0
+  js:
+    js/no-scrolling.js: {}
+
+select-list:
+  js:
+    js/wdc-select-list.js: {}
+  dependencies:
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.ui.selectmenu
+
+chosen:
+  js:
+    js/wdc-chosen-reborn.js: {}
+  dependencies:
+    - core/drupalSettings

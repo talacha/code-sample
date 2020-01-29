@@ -1,0 +1,80 @@
+.group-member {
+  &-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    letter-spacing: 0.5px;
+    font-weight: $fw-regular;
+    border-left: 4px solid transparent;
+    &.leader {
+      border-left: 4px solid $tc-cantaloupe--400;
+    }
+
+    .member {
+      &-display-image {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+      }
+
+      &-reputation {
+        color: $tc-blueberry--500;
+        background-color: $tc-blueberry--100;
+        text-align: center;
+        font-size: $fs-s;
+        line-height: $fs-xl;
+        width: 40px;
+        height: 20px;
+        margin: $sp-xxs auto 0 auto;
+        overflow: hidden;
+      }
+
+      &-leadership {
+        display: inline-block;
+        text-transform: uppercase;
+        color: $tc-cantaloupe--400;
+        font-size: $fs-xxxs;
+      }
+
+      &-username {
+        font-size: $fs-m;
+        line-height: $fs-xl;
+        font-weight: $fw-medium;
+        color: $tc-blueberry--500;
+      }
+
+      &-name,
+      &-type {
+        font-size: $fs-s;
+        line-height: $fs-xl;
+        color: $tc-black-pepper--300
+      }
+
+      &-organization {
+        font-size: $fs-xxs;
+        line-height: $fs-s;
+        color: $tc-licorice--200;
+      }
+    }
+  }
+  &-aside {
+    display: inline-block;
+    padding-right: $sp-m;
+  }
+  &-details {
+    display: inline-block;
+  }
+}
+.member-leadership:before {
+  display: inline-block;
+  color: $tc-cantaloupe--400;
+  content: ' ';
+  background-image: url('../images/group-leader-cantaloupe--400.svg');
+  background-size: cover;
+  width: 9px;
+  height: 9px;
+  margin-right: $sp-xxxs;
+}
+
+.member-card-demo {
+  padding: $sp-xl;
+}

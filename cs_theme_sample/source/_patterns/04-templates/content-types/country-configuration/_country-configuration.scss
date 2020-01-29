@@ -1,0 +1,23 @@
+.country-config {
+
+  &__flag-wrapper {
+    display: flex;
+    margin-bottom: $sp-xl;
+  }
+
+  &__flag-image {
+    padding-right: $sp-m;
+    max-width: 211px;
+    box-sizing: content-box;
+  }
+
+  &__local-capabilities-wrapper {
+    margin-bottom: $sp-m;
+  }
+
+  &__pre-conf-values-wrapper {
+    padding: $sp-m;
+    background: $tc-soap--200;
+  }
+
+}

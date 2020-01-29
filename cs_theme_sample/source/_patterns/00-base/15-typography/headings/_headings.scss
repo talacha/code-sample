@@ -1,0 +1,64 @@
+@mixin text-styles($font-size, $font-weight, $line-height, $spacing: null) {
+  font-family: $ff-heading;
+  color: $c-text-primary;
+  letter-spacing: 0.5px;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  margin-top: 0;
+  margin-bottom: $spacing;
+}
+
+h1,
+.title__h1,
+.text-formatted .title__h1{
+  @include text-styles($fs-h1, $fw-medium, 1.29, $sp-s);
+}
+
+h2,
+.title__h2,
+.text-formatted .title__h2 {
+  @include text-styles($fs-h2, $fw-bold, 1.17, $sp-s);
+}
+
+h3,
+.title__h3,
+.text-formatted .title__h3 {
+  @include text-styles($fs-h3, $fw-bold, 1.2, $sp-s);
+}
+
+h4,
+.title__h4,
+.text-formatted .title__h4 {
+  @include text-styles($fs-h4, $fw-bold, 1.33, $sp-s);
+}
+
+h5,
+.title__h5,
+.text-formatted .title__h5 {
+  @include text-styles($fs-h5, $fw-bold, 1.31, $sp-xxs);
+}
+
+h6,
+.title__h6,
+.text-formatted .title__h6 {
+  @include text-styles($fs-h6, $fw-bold, 1.31, $sp-xxs);
+
+}
+.title__h6--regular {
+  @include text-styles($fs-h6, $fw-regular, 1.31, $sp-xxs);
+}
+
+.title--collapsible {
+  padding-left: $sp-m;
+}
+
+// Needed for PL, since this declaration is currently for Drupal only.
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px,1px,1px,1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}

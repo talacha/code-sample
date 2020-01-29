@@ -1,0 +1,109 @@
+.card-item {
+  .views-field-metadata {
+    margin-top: $sp-xxs;
+
+    .icon--file-attachment, .icon--video-attachment {
+      background-repeat: no-repeat;
+      background-size: 15px;
+      width: 15px;
+      height: 15px;
+    }
+    .icon--file-attachment {
+      background-image: url(../images/pin-indicator.svg);
+      &::before {
+        content: none;
+      }
+    }
+    .icon--video-attachment {
+      background-image: url(../images/video-indicator.svg);
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  .icon--bookmark-remove{
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url("../images/close-x.svg") no-repeat center center;
+    &:hover {
+      background: url("../images/close-x-click.svg") no-repeat center center;
+    }
+  }
+}
+
+.view-flag-bookmark {
+  margin-top: $sp-xxs;
+
+  .view-filters {
+    display: none;
+  }
+
+  .bookmark-toggle {
+    position: relative;
+    float: right;
+    margin-top: 30px;
+
+    .bookmark-toggle__icon {
+      margin-left: $sp-s;
+    }
+    img {
+      width: 21px;
+      height: 16px;
+    }
+  }
+
+  .views-col {
+    width: 32%;
+  }
+
+  .views-col.col-2 {
+    margin-left: $sp-m;
+    margin-right: $sp-m;
+  }
+
+  .form-item-sort-by {
+    margin-bottom: $sp-xl;
+  }
+
+  .views-field-link-flag {
+    display: none;
+    text-align: center;
+    position: relative;
+    clear: both;
+  }
+
+  &.view-display-id-page_1 {
+    .card-item {
+      min-height: 128px;
+    }
+  }
+
+  &.view-display-id-page_2 {
+    .card-item__close {
+      position: absolute;
+      right: 24px;
+      top: calc(50% - 9px);
+    }
+
+    .icon--bookmark-remove {
+      width: 18px;
+      height: 18px;
+    }
+
+    .card-item__cancel {
+      margin-top: $sp-s;
+    }
+  }
+
+  .bookmarks-view {
+    .bookmark-icon {
+      display: none;
+    }
+
+    .bookmark-icon-tooltip::after {
+      content: ' Bookmark';
+    }
+  }
+}

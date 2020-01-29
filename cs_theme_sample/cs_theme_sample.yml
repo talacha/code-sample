@@ -1,0 +1,265 @@
+name: Phoenix Reborn
+type: theme
+description: A refactor of Phoenix theme with Pattern Lab
+base theme: stable
+core: 8.x
+libraries:
+  - phoenix_reborn/core
+libraries-override:
+  core/normalize:
+    css:
+      base:
+        assets/vendor/normalize-css/normalize.css: false
+  classy/base:
+    css:
+      component:
+        css/components/button.css: false
+  entity_browser/entity_list:
+    css:
+      component:
+        css/entity_browser.entity_list.css: false
+  entity_browser/tabs:
+    css:
+      component:
+        css/entity_browser.tabs.css: false
+  node/drupal.node.preview:
+    css:
+      theme:
+        /core/themes/stable/css/node/node.preview.css: false
+  paragraphs/drupal.paragraphs.admin:
+    css:
+      theme:
+        css/paragraphs.admin.css: false
+  core/jquery.ui.selectmenu:
+    css:
+      component:
+        assets/vendor/jquery.ui/themes/base/selectmenu.css: false
+  core/drupal.tableselect:
+    js:
+      misc/tableselect.js: js/tableselect.js
+libraries-extend:
+  entity_browser/view:
+    - phoenix_reborn/entityBrowser
+  core/drupal.dialog:
+    - phoenix_reborn/noScrolling
+  chosen/drupal.chosen:
+    - phoenix_reborn/chosen
+ckeditor_stylesheets:
+  - dest/style.css
+stylesheets-remove:
+  - libraries/superfish/css/superfish.css
+regions:
+  header: Header
+  alert: Alert
+  header_top: Header top
+  breadcrumb: Breadcrumb
+  header_bottom: Header bottom
+  page_top: Page top
+  page_bottom: Page bottom
+  featured: Featured
+  sidebar_first: Sidebar first
+  sidebar_second: Sidebar second
+  content: Content
+  content_top: Content top
+  footer_first: Footer first
+  footer_second: Footer second
+component-libraries:
+  svgs:
+    paths:
+      - images/svgs
+  macros:
+    paths:
+      - source/_macros
+  base_reborn:
+    paths:
+      - source/_patterns/00-base
+      - source/_patterns/00-base/05-colors
+      - source/_patterns/00-base/10-spacing
+      - source/_patterns/00-base/15-typography/fonts
+      - source/_patterns/00-base/15-typography/headings
+      - source/_patterns/00-base/15-typography/links/demo
+      - source/_patterns/00-base/15-typography/lists
+      - source/_patterns/00-base/15-typography/text/demo
+      - source/_patterns/00-base/15-typography/text
+      - source/_patterns/00-base/20-layout/breakpoints
+      - source/_patterns/00-base/20-layout/grid/demo
+      - source/_patterns/00-base/40-borders
+      - source/_patterns/00-base/animations/01-transitions
+  atoms_reborn:
+    paths:
+      - source/_patterns/01-atoms
+      - source/_patterns/01-atoms/alert-bar
+      - source/_patterns/01-atoms/alert-bar/demo
+      - source/_patterns/01-atoms/archived-content-branding
+      - source/_patterns/01-atoms/archived-content-branding/demo
+      - source/_patterns/01-atoms/back-to-top-button
+      - source/_patterns/01-atoms/back-to-top-button/demo
+      - source/_patterns/01-atoms/breadcrumb
+      - source/_patterns/01-atoms/breadcrumb/demo
+      - source/_patterns/01-atoms/buttons
+      - source/_patterns/01-atoms/buttons/demo
+      - source/_patterns/01-atoms/calendar-icon
+      - source/_patterns/01-atoms/calendar-icon/_demo
+      - source/_patterns/01-atoms/card
+      - source/_patterns/01-atoms/container-list
+      - source/_patterns/01-atoms/container-list/demo
+      - source/_patterns/01-atoms/details
+      - source/_patterns/01-atoms/details/demo
+      - source/_patterns/01-atoms/dialog/demo
+      - source/_patterns/01-atoms/facets
+      - source/_patterns/01-atoms/fields
+      - source/_patterns/01-atoms/fields/field
+      - source/_patterns/01-atoms/fields/field/demo
+      - source/_patterns/01-atoms/fields/multi-column-field
+      - source/_patterns/01-atoms/fields/multi-column-field/demo
+      - source/_patterns/01-atoms/file-attachment
+      - source/_patterns/01-atoms/file-attachment/demo
+      - source/_patterns/01-atoms/form-element
+      - source/_patterns/01-atoms/form-select
+      - source/_patterns/01-atoms/form-select/demo
+      - source/_patterns/01-atoms/group-page-header
+      - source/_patterns/01-atoms/group-page-header/demo
+      - source/_patterns/01-atoms/icon-links
+      - source/_patterns/01-atoms/images
+      - source/_patterns/01-atoms/input-checkbox
+      - source/_patterns/01-atoms/input-checkbox/demo
+      - source/_patterns/01-atoms/input-email
+      - source/_patterns/01-atoms/input-email/demo
+      - source/_patterns/01-atoms/input-label
+      - source/_patterns/01-atoms/input-password
+      - source/_patterns/01-atoms/input-password/demo
+      - source/_patterns/01-atoms/input-radio
+      - source/_patterns/01-atoms/input-radio/demo
+      - source/_patterns/01-atoms/input-search
+      - source/_patterns/01-atoms/input-search/demo
+      - source/_patterns/01-atoms/input-textfield
+      - source/_patterns/01-atoms/input-textfield/demo
+      - source/_patterns/01-atoms/list-view-list
+      - source/_patterns/01-atoms/list
+      - source/_patterns/01-atoms/long-text
+      - source/_patterns/01-atoms/mark
+      - source/_patterns/01-atoms/mark/demo
+      - source/_patterns/01-atoms/member-callout
+      - source/_patterns/01-atoms/member-card
+      - source/_patterns/01-atoms/member-card/demo
+      - source/_patterns/01-atoms/node-metadata
+      - source/_patterns/01-atoms/node-metadata/demo
+      - source/_patterns/01-atoms/organizations-i-manage
+      - source/_patterns/01-atoms/pager/book-navigation
+      - source/_patterns/01-atoms/pager/book-navigation/demo
+      - source/_patterns/01-atoms/pager
+      - source/_patterns/01-atoms/paragraph
+      - source/_patterns/01-atoms/paragraph/demo
+      - source/_patterns/01-atoms/product-areas-i-support
+      - source/_patterns/01-atoms/related-content
+      - source/_patterns/01-atoms/related-content/demo
+      - source/_patterns/01-atoms/status-flag
+      - source/_patterns/01-atoms/status-flag/demo
+      - source/_patterns/01-atoms/tables/default-table/demo
+      - source/_patterns/01-atoms/tables/multivalue-field-table/demo
+      - source/_patterns/01-atoms/tables/related-questions-table
+      - source/_patterns/01-atoms/tables/related-questions-table/demo
+      - source/_patterns/01-atoms/tables/transposed-table
+      - source/_patterns/01-atoms/tables/transposed-table/demo
+      - source/_patterns/01-atoms/tables/vertical-rule-table
+      - source/_patterns/01-atoms/tables/vertical-rule-table/demo
+      - source/_patterns/01-atoms/tables/views-table
+      - source/_patterns/01-atoms/tables/views-table/demo
+      - source/_patterns/01-atoms/tables/views-tree-table
+      - source/_patterns/01-atoms/tables/views-tree-table/demo
+      - source/_patterns/01-atoms/tabs/local-tasks
+      - source/_patterns/01-atoms/tabs/local-tasks/demo
+      - source/_patterns/01-atoms/tabs/vertical
+      - source/_patterns/01-atoms/tabs/vertical/demo
+      - source/_patterns/01-atoms/tags
+      - source/_patterns/01-atoms/tags/demo
+      - source/_patterns/01-atoms/textarea
+      - source/_patterns/01-atoms/textarea/demo
+      - source/_patterns/01-atoms/title
+      - source/_patterns/01-atoms/title/demo
+      - source/_patterns/01-atoms/user-profile
+      - source/_patterns/01-atoms/user-profile/demo
+      - source/_patterns/01-atoms/user-profile/extras
+      - source/_patterns/01-atoms/views-field-metadata
+      - source/_patterns/01-atoms/voting-widget
+      - source/_patterns/01-atoms/voting-widget/demo
+      - source/_patterns/01-atoms/warning-blurb
+      - source/_patterns/01-atoms/warning-blurb/demo
+      - source/_patterns/01-atoms/workday-dropbutton/demo
+      - source/_patterns/01-atoms/workflow_state
+      - source/_patterns/01-atoms/workflow_state/demo
+  molecules_reborn:
+    paths:
+      - source/_patterns/02-molecules
+      - source/_patterns/02-molecules/blocks
+      - source/_patterns/02-molecules/blocks/calendar-event
+      - source/_patterns/02-molecules/blocks/calendar-event/demo
+      - source/_patterns/02-molecules/blocks/carousel
+      - source/_patterns/02-molecules/blocks/carousel/demo
+      - source/_patterns/02-molecules/blocks/content-404/demo
+      - source/_patterns/02-molecules/blocks/content-container
+      - source/_patterns/02-molecules/blocks/demo
+      - source/_patterns/02-molecules/blocks/filter-cta-box
+      - source/_patterns/02-molecules/blocks/filter-cta-box/demo
+      - source/_patterns/02-molecules/blocks/groups-404
+      - source/_patterns/02-molecules/blocks/groups-404/demo
+      - source/_patterns/02-molecules/blocks/hero
+      - source/_patterns/02-molecules/blocks/hero/demo
+      - source/_patterns/02-molecules/blocks/megamenu-feature-box
+      - source/_patterns/02-molecules/blocks/megamenu-feature-box/demo
+      - source/_patterns/02-molecules/blocks/product-manager
+      - source/_patterns/02-molecules/blocks/product-manager/demo
+      - source/_patterns/02-molecules/book-navigation-links
+      - source/_patterns/02-molecules/book-navigation-links/demo
+      - source/_patterns/02-molecules/branding
+      - source/_patterns/02-molecules/comments
+      - source/_patterns/02-molecules/comments/action-links
+      - source/_patterns/02-molecules/comments/demo
+      - source/_patterns/02-molecules/dropdowns/manage-subscriptions/demo
+      - source/_patterns/02-molecules/forms
+      - source/_patterns/02-molecules/forms/field-multi-value-form
+      - source/_patterns/02-molecules/forms/field-multi-value-form/demo
+      - source/_patterns/02-molecules/group-members-view
+      - source/_patterns/02-molecules/group-members-view/demo
+      - source/_patterns/02-molecules/login-message
+      - source/_patterns/02-molecules/menu
+      - source/_patterns/02-molecules/menu/book-tree/demo
+      - source/_patterns/02-molecules/menu/footer-links/demo
+      - source/_patterns/02-molecules/menu/footer-social/demo
+      - source/_patterns/02-molecules/menu/login-menu-links/demo
+      - source/_patterns/02-molecules/menu/main-megamenu/demo
+      - source/_patterns/02-molecules/menu/main-navigation/demo
+      - source/_patterns/02-molecules/menu/menu-tabs
+      - source/_patterns/02-molecules/menu/menu-tabs/demo
+      - source/_patterns/02-molecules/menu/superfish
+      - source/_patterns/02-molecules/menu/user-account
+      - source/_patterns/02-molecules/menu/user-account/demo
+      - source/_patterns/02-molecules/menu/wdc-megamenu
+      - source/_patterns/02-molecules/related-questions
+      - source/_patterns/02-molecules/site/footer-copyright
+      - source/_patterns/02-molecules/site/footer-links
+      - source/_patterns/02-molecules/wdc-homepage-card
+      - source/_patterns/02-molecules/wdc-homepage-card/demo
+      - source/_patterns/02-molecules/workbench-block
+      - source/_patterns/02-molecules/workbench-block/demo
+  organisms_reborn:
+    paths:
+      - source/_patterns/03-organisms
+      - source/_patterns/03-organisms/menus/menu-sections
+      - source/_patterns/03-organisms/menus/menu-sections/demo
+      - source/_patterns/03-organisms/regions
+      - source/_patterns/03-organisms/regions/demo
+      - source/_patterns/03-organisms/site/site-footer
+      - source/_patterns/03-organisms/site/site-footer/demo
+      - source/_patterns/03-organisms/site/site-header
+      - source/_patterns/03-organisms/site/site-header/demo
+  templates_reborn:
+    paths:
+      - source/_patterns/04-templates
+      - source/_patterns/04-templates/00-site
+      - source/_patterns/04-templates/content-types
+      - source/_patterns/04-templates/login-template
+  pages_reborn:
+    paths:
+      - source/_patterns/05-pages
+      - source/_patterns/05-pages/login-pages/demo

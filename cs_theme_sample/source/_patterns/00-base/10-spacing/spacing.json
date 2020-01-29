@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "name": "$sp-xxxs",
+      "value": "4px",
+      "comment": ""
+    },
+    {
+      "name": "$sp-xxs",
+      "value": "8px",
+      "comment": ""
+    },
+    {
+      "name": "$sp-xs",
+      "value": "12px",
+      "comment": ""
+    },
+    {
+      "name": "$sp-s",
+      "value": "16px",
+      "comment": ""
+    },
+    {
+      "name": "$sp-m",
+      "value": "24px",
+      "comment": ""
+    },
+    {
+      "name": "$sp-l",
+      "value": "32px",
+      "comment": ""
+    },
+    {
+      "name": "$sp-xl",
+      "value": "40px",
+      "comment": ""
+    },
+    {
+      "name": "$sp-xxl",
+      "value": "64px",
+      "comment": ""
+    },
+    {
+      "name": "$sp-xxxl",
+      "value": "80px",
+      "comment": ""
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$sp-</code> in <code>source/_patterns/00-base/10-spacing/_spacing.scss</code>"
+  }
+}

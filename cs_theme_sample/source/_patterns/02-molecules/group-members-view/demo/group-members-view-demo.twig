@@ -1,0 +1,54 @@
+<div class="container group-members-view-demo">
+  <div class="layout__main layout__main--sidebar-first">
+    <main class="main content layout__content">
+      <h2 class="title__h2">Group Membership View Styling</h2>
+      <div class="header-row">
+        <div class="inline-header-left">
+          <div class="block-search-api-sorts">
+            <h2 style="display: none;">Sort by:</h2>
+            <div class="item-list">
+              <div class="sort-label">
+                <span class="sort_api_title">Sort by:</span>
+              </div>
+              <select class="wdc-search-api-sorts">
+                <option selected="selected" value="http://localhost/groups/my-groups?sort=title&amp;order=asc">A-Z
+                </option>
+                <option value="http://localhost/groups/my-groups?sort=label_sort&amp;order=desc">Z-A</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="inline-header-right">
+          <a href="#" class="button button__primary" hreflang="en">Add Members</a>
+        </div>
+      </div>
+
+      <div class="header-row">
+        <div class="inline-header-left">
+          <div class="results-count">
+            Showing: 10 of 42 members.
+          </div>
+        </div>
+      </div>
+
+      {% if rows %}
+        <div class="view-group-members-container">
+          <div class="group-membership-row group-membership-row-header">
+            <div class="header member">Member</div>
+            <div class="header products">Product Area</div>
+            <div class="header operations"></div>
+          </div>
+          {% for row in rows %}
+            {% include '@molecules_reborn/group-members-view/_group_members_view_row.twig' with row %}
+          {% endfor %}
+        </div>
+      {% endif %}
+
+    </main>
+    <aside class="sidebar content layout__sidebar--first">
+      Insert sidebar here.
+    </aside>
+  </div>
+</div>

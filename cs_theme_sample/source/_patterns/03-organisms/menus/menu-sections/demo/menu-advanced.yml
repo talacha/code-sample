@@ -1,0 +1,280 @@
+items:
+  -
+    is_expanded: true
+    is_collapsed: false
+    in_active_trail: true
+    title: 'Lorem'
+    url: '#'
+    attributes:
+      class:
+      - 'selected'
+    below:
+      -
+        is_expanded: false
+        is_collapsed: false
+        in_active_trail: false
+        title: 'Lorem ipsum'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'dolor sit amet'
+        url: '#'
+        below: { }
+      -
+        is_expanded: true
+        is_collapsed: false
+        in_active_trail: true
+        is_active: true
+        title: 'consectetur'
+        url: '#'
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'adipiscing'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'elit'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'Nullam'
+        url: '#'
+        below: { }
+  -
+    is_expanded: true
+    is_collapsed: false
+    in_active_trail: true
+    title: 'Ipsum'
+    url: '#'
+    below:
+      -
+        is_expanded: false
+        is_collapsed: false
+        in_active_trail: false
+        title: 'ligula magna'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'lacinia nec'
+        url: '#'
+        below: { }
+      -
+        is_expanded: true
+        is_collapsed: false
+        in_active_trail: true
+        is_active: true
+        title: 'eros vel'
+        url: '#'
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'imperdiet blandit'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'blandit massa'
+        url: '#'
+        below: { }
+  -
+    is_expanded: true
+    is_collapsed: false
+    in_active_trail: true
+    title: 'Dolor'
+    url: '#'
+    below:
+      -
+        is_expanded: false
+        is_collapsed: false
+        in_active_trail: false
+        title: 'Duis sed'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'blandit massa'
+        url: '#'
+        below: { }
+      -
+        is_expanded: true
+        is_collapsed: false
+        in_active_trail: true
+        is_active: true
+        title: 'imperdiet blandit'
+        url: '#'
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'eros vel'
+        url: '#'
+        below: { }
+  -
+    is_expanded: true
+    is_collapsed: false
+    in_active_trail: true
+    title: 'Sit'
+    url: '#'
+    below:
+      -
+        is_expanded: false
+        is_collapsed: false
+        in_active_trail: false
+        title: 'Nullam'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'elit'
+        url: '#'
+        below: { }
+      -
+        is_expanded: true
+        is_collapsed: false
+        in_active_trail: true
+        is_active: true
+        title: 'adipiscing'
+        url: '#'
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'consectetur'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'dolor sit amet'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'Lorem ipsum'
+        url: '#'
+        below: { }
+  -
+    is_expanded: true
+    is_collapsed: false
+    in_active_trail: true
+    title: 'Amet'
+    url: '#'
+    below:
+      -
+        is_expanded: false
+        is_collapsed: false
+        in_active_trail: false
+        title: 'elit'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'Nullam'
+        url: '#'
+        below: { }
+      -
+        is_expanded: true
+        is_collapsed: false
+        in_active_trail: true
+        is_active: true
+        title: 'consectetur'
+        url: '#'
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'adipiscing'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'Lorem ipsum'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'dolor sit amet'
+        url: '#'
+        below: { }
+  -
+    is_expanded: true
+    is_collapsed: false
+    in_active_trail: true
+    title: 'Consectetur'
+    url: '#'
+    below:
+      -
+        is_expanded: false
+        is_collapsed: false
+        in_active_trail: false
+        title: 'blandit massa'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'Duis sed'
+        url: '#'
+        below: { }
+      -
+        is_expanded: true
+        is_collapsed: false
+        in_active_trail: true
+        is_active: true
+        title: 'eros vel'
+        url: '#'
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'imperdiet blandit'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'ligula magna'
+        url: '#'
+        below: { }
+      -
+        is_expanded: false
+        is_collapsed: true
+        in_active_trail: false
+        title: 'lacinia nec'
+        url: '#'
+        below: { }
+name: 'title__h2'
+title: 'Product Information'
+heading: 'h2'

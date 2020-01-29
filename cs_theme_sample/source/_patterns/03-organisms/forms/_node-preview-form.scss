@@ -1,0 +1,87 @@
+/* Ported and modified from node-preview.css in Phoenix theme. */
+.node-preview-container {
+  background: $tc-blueberry--100;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3333);
+  position: fixed;
+  z-index: z("toolbar");
+  width: 100%;
+  height: 40px;
+}
+
+.node-preview-page {
+  // Some previews do not have chosen, so make sure there are no layering
+  // issues on those select lists.
+  .form-select-list {
+    &__menu {
+      z-index: z("toolbar");
+    }
+  }
+}
+
+.node-preview-form-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .form-select {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    // Restore missing colon.
+    .input-label {
+      display: block;
+      &:after {
+        content: ':';
+      }
+    }
+
+    &__select {
+      width: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  // By making this visually hidden, gives the effect of centering the select
+  // list.  Otherwise will send select list to far right side of page.
+  .button__primary {
+    display: block;
+    visibility: hidden;
+  }
+  // Some previews have chosen, prevent select list styles from clobbering them.
+  .chosen-container-single {
+
+    &.form-select__select {
+      height: auto;
+      padding: 0;
+      border: none;
+    }
+  }
+
+  .node-preview-backlink {
+    background-color: $tc-blueberry--400;
+    border: 1px solid $tc-blueberry--500;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .4);
+    color: $tc-white;
+    padding: $sp-xxxs $sp-xs;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+    margin-left: $sp-s;
+
+    &:visited {
+      color: $tc-white;
+    }
+
+    &:focus, &:hover {
+      background-color: $tc-blueberry--500;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: $tc-blueberry--500;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);
+    }
+  }
+}

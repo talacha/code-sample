@@ -1,0 +1,70 @@
+.layout {
+  &__container--login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 100vh;
+    padding: 48px $sp-l 0 $sp-l;
+
+    .layout__content {
+      max-width: 368px;
+      margin: 0 auto;
+    }
+  }
+
+  &__logo--login {
+    background-image: url('../images/login-logo-blue.svg');
+    height: 48px;
+    width: 192px;
+    background-size: 192px 48px;
+    margin: 0 auto $sp-xl auto;
+  }
+}
+
+.content__container {
+  &--login {
+    margin-bottom: $sp-xl;
+  }
+}
+
+@media screen and (min-width: $bp-xsmall) {
+  .layout {
+    &__container--login {
+      background: rgba($tc-blueberry--500, .97);
+      background: linear-gradient(90deg, rgba($tc-blueberry--500, .97), rgba($tc-blueberry--400, .97));
+      padding-top: 168px;
+    }
+
+    &__logo--login {
+      background-image: url('../images/login-logo-white.svg');
+      height: 54px;
+      width: 230px;
+      background-size: 230px 54px;
+      margin: 0 auto $sp-l auto;
+    }
+  }
+  .content__container {
+    &--login {
+      background: $tc-white;
+      border-radius: 4px;
+      padding: $sp-l;
+      box-shadow: 0 2px 20px rgba($tc-black, .24);
+      margin-bottom: $sp-l;
+    }
+  }
+}
+
+@media screen and (min-width: $bp-small) {
+
+  .user-login-pages {
+    background-image: url('../images/login-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .layout__container--login {
+    width: 50%;
+  }
+}

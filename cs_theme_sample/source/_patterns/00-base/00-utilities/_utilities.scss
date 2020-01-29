@@ -1,0 +1,364 @@
+/// Mixin - Fluid Type
+/// PRECISE CONTROL OVER RESPONSIVE TYPOGRAPHY FOR SASS
+/// Indrek Paas @indrekpaas
+/// Inspired by Mike Riethmuller's Precise control over responsive typography
+/// @link http://madebymike.com.au/writing/precise-control-responsive-typography/
+/// @param $properties
+/// @param $min-vw
+/// @param $max-vw
+/// @param $min-value
+/// @param $max-value
+@mixin fluid-type ($properties, $min-vw, $max-vw, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media screen and (min-width: $min-vw) {
+    @each $property in $properties {
+      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+    }
+  }
+
+  @media screen and (min-width: $max-vw) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
+/// Strip unit
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/// Center.
+/// Center an element vertically or horizontally in its container,
+/// and optionally horizontally. Option to undo.
+/// @param $horizonally-center - center horizontally
+/// @param $vertically-center - center vertically
+/// @param $absolute-positioning - position absolutely, rather than relatively
+/// @param $undo - undo vertical centering on an element it was previously applied to
+@mixin center($horizontally: true, $vertically: true, $absolute: false, $undo: false) {
+  display: inline-block;
+  @if ($absolute) {
+    position: absolute;
+  } @else {
+    position: relative;
+  }
+  @if ($horizontally == true and $vertically == true) {
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  @if ($vertically == true and $horizontally == false) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @if ($horizontally == true and $vertically == false) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if ($undo) {
+    position: static;
+    left: auto;
+    transform: none;
+  }
+}
+
+/// Mixin - Local Base
+/// Set HTML font sizing base for global/local sizing (rem/em).
+/// @link https://css-tricks.com/rem-global-em-local/
+@mixin local-base() {
+  font-size: 1rem; // 16px (default)
+}
+
+.local-base {
+  @include local-base();
+}
+
+/// Word Wrap fix for long spaceless strings
+/// @link https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/// Ellipsis fix for long spaceless strings
+/// @link https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+@mixin ellipsis() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/// Styles used in input fields for comments currently.
+@mixin inputTextBox() {
+  height: $sp-xl;
+  width: 100%;
+  max-width: 100%;
+  padding: $sp-xxs 0 $sp-xxs $sp-s;
+  border-radius: 2px;
+  border: solid 1px $c-border-primary;
+  font-size: $fs-body;
+}
+
+/// Styles used for text-based input fields (type = text, email, password)
+@mixin inputText() {
+  border: 1px solid $c-border-primary;
+  border-radius: 2px;
+  color: $c-text-primary;
+  font-family: $ff-body;
+  font-size: $fs-s;
+  height: $sp-l;
+  max-width: 100%;
+  padding: $sp-xxxs $sp-xs;
+  outline: none;
+
+  &:hover {
+    border: 1px solid $c-border-primary--hover;
+  }
+
+  &:focus {
+    border: 1px solid $c-border-primary--focus;
+  }
+
+  // Handles errors from server side validation.
+  &--error {
+    border: 1px solid $c-border-error;
+
+    &:hover {
+      border: 1px solid $c-border-error;
+    }
+  }
+
+  // Handle Clientside validation adding error class and label with error class.
+  &.error {
+    border: 1px solid $c-border-error;
+    margin-bottom: $sp-xxxs;
+
+    &:hover {
+      border: 1px solid $c-border-error;
+    }
+
+    + label.error {
+      color: $c-alert--error;
+      font-size: $fs-xs;
+      line-height: 1.31;
+    }
+  }
+}
+
+/// Styles used for non-chosen single-select lists.
+@mixin selectList() {
+  &.error {
+    + span.form-select-list {
+      border-color: $c-border-error;
+
+      &:hover {
+        border-color: $c-border-error;
+      }
+    }
+  }
+}
+
+// Styles for list item triangles.  Variables named based on shape of triangle
+// which is isosceles.  Best used in a :before selector.
+@mixin listItemTriangle($direction, $legs: $sp-xxxs, $base: 6px) {
+  width: 0;
+  height: 0;
+  display: flex;
+  position: relative;
+  content: '';
+  left: -($legs * 2);
+  @if ($direction == 'up') {
+    border-left: $legs solid transparent;
+    border-right: $legs solid transparent;
+    border-bottom: $base solid $c-text-secondary;
+    top: $base;
+  }
+  @if ($direction == 'down') {
+    border-left: $legs solid transparent;
+    border-right: $legs solid transparent;
+    border-top: $base solid $c-text-secondary;
+    top: $base;
+  }
+  @if ($direction == 'left') {
+    border-top: $legs solid transparent;
+    border-bottom: $legs solid transparent;
+    border-right: $base solid $c-text-secondary;
+    top: $legs;
+  }
+  @if ($direction == 'right') {
+    border-top: $legs solid transparent;
+    border-bottom: $legs solid transparent;
+    border-left: $base solid $c-text-secondary;
+    top: $legs;
+  }
+}
+
+// Adds a cross-browser dashed border via border image rule.
+@mixin dashed-border-image() {
+  /* Fallback border.  Looks different on every browser.  Yuck. */
+  border: 1.5px dashed $c-border-primary;
+  /* Cross-browser dashed border via border image.  Yay. */
+  border-image-source: url('../images/dashed-border.png');
+  border-image-slice: 1;
+  border-image-repeat: round;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder-global {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+// Mixin which hides elements visually.
+@mixin visibility-hidden() {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+/// Appearance styles.
+/// @param $appearance - an appearance value, such as none.
+@mixin appearance($appearance) {
+  // stylelint-disable property-no-vendor-prefix
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  appearance: $appearance;
+  // stylelint-enable
+}
+
+/*
+ * Center Items with Flexbox
+ *
+ * @param $direction Optional.
+ *   Pass 'flex-direction' values to center vertically or horizontally.
+ *   For example: 'row', 'column', etc.
+ */
+@mixin centered($flex-direction: null) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $flex-direction;
+}
+
+/*
+ * Round Images
+ *
+ * @param $size
+ *   The image size in pixels. Apply to <img> tag.
+ */
+@mixin round-image($size) {
+  border: solid 1px $c-border-primary;
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+  margin: 0;
+  max-width: initial;
+  object-fit: cover;
+}
+
+@mixin reputation-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin reputation-count {
+  padding: 0 10px;
+  color: $tc-blueberry--500;
+  background-color: $tc-blueberry--100;
+  font-size: $fs-description;
+  font-weight: $fw-medium;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+// This can only be used a maximum of one time.  With multiple usages, the last
+// include of this mixin "wins".
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+    opacity: 1;
+  }
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+//Mixin to display textarea label, descriptions.
+@mixin textarea-display($width, $height, $font-size, $line-height, $letter-spacing, $color) {
+  width: $width;
+  height: $height;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  text-align: left;
+  color: $color;
+}
+
+/**
+ * Sets background image for icon based on file name and path.
+ *
+ * @param $path
+ *   The partial path after images directory to find the desired image.
+ * @param $name
+ *   The name of the svg file.
+ */
+@mixin widget-with-icon($path, $name) {
+  .icon {
+    background: url("../images/#{$path}/#{$name}.svg") no-repeat center center;
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin-left: -($sp-xxs);
+    margin-top: -($sp-xxs);
+  }
+}
+
+/**
+ * Sets file path for worklet icons.
+ *
+ * @param $product
+ *   The directory within product info to get worklet icons.
+ * @param $category
+ *   The name of the file.
+ */
+@mixin worklet-icons($product, $category) {
+  @include widget-with-icon("product-info-icons/#{$product}", $category);
+}

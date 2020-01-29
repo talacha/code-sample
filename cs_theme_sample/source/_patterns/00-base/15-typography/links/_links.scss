@@ -1,0 +1,67 @@
+a,
+.link {
+  color: $c-link-primary;
+  text-decoration: none;
+  word-break: break-word;
+  overflow-wrap: break-word;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $c-link-primary--visited;
+  }
+}
+
+div.print__wrapper.print__wrapper--pdf {
+  margin-bottom: 24px;
+}
+
+div.node-action-links {
+  margin-bottom: 24px;
+  display: flex;
+
+  a {
+    position: relative;
+    float: left;
+    margin-right: 30px;
+  }
+
+  a.flag {
+    display: initial;
+  }
+
+  .bookmark-icon {
+    height: 18px;
+  }
+
+  .bookmark-icon-tooltip {
+    display: none;
+    font-family: $ff-roboto;
+    font-size: $fs-s;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    background-color: $tc-black-pepper--300;
+    color: $tc-white;
+    z-index: 9999;
+    text-align: center;
+    width: 89px;
+    height: 35px;
+    padding: 7px 10px 7px 11px;
+    margin-left: -35px;
+    margin-top: 8px;
+    position: absolute;
+  }
+
+  div.ajax-progress-throbber {
+    display: none;
+  }
+}
+
+
+

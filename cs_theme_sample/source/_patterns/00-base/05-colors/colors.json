@@ -1,0 +1,192 @@
+{
+  "items": [
+    {
+      "name": "$tc-blueberry--100",
+      "value": "#d7eafc",
+      "comment": ""
+    },
+    {
+      "name": "$tc-blueberry--300",
+      "value": "#40a0ff",
+      "comment": ""
+    },
+    {
+      "name": "$tc-blueberry--400",
+      "value": "#0875e1",
+      "comment": ""
+    },
+    {
+      "name": "$tc-blueberry--500",
+      "value": "#005cb9",
+      "comment": "Input, borders"
+    },
+    {
+      "name": "$tc-blue--light",
+      "value": "#40b4e5",
+      "comment": "Mega menu, breadcrumbs"
+    },
+    {
+      "name": "$tc-blue--rich-electric",
+      "value": "#1889c8",
+      "comment": "Hover color for main menu button."
+    },
+    {
+      "name": "$tc-blue--lighter",
+      "value": "#eff9fd",
+      "comment": ""
+    },
+    {
+      "name": "$tc-black-pepper--100",
+      "value": "#787878",
+      "comment": "Text links (in metadata), tabs, facets"
+    },
+    {
+      "name": "$tc-black-pepper--200",
+      "value": "#616161",
+      "comment": ""
+    },
+    {
+      "name": "$tc-black-pepper--300",
+      "value": "#4a4a4a",
+      "comment": "Headings, body"
+    },
+    {
+      "name": "$tc-black-pepper--400",
+      "value": "#333333",
+      "comment": ""
+    },
+    {
+      "name": "$tc-licorice--100",
+      "value": "#a1aab3",
+      "comment": "Input, borders"
+    },
+    {
+      "name": "$tc-licorice--200",
+      "value": "#7b858f",
+      "comment": "Placeholder, metadata"
+    },
+    {
+      "name": "$tc-licorice--300",
+      "value": "#5e6a75",
+      "comment": "Placeholder, metadata"
+    },
+    {
+      "name": "$tc-licorice--500",
+      "value": "#333d47",
+      "comment": "Icon hover, breadcrumb link text"
+    },
+    {
+      "name": "$tc-licorice--600",
+      "value": "#1f2623",
+      "comment": "Footer Background"
+    },
+    {
+      "name": "$tc-soap--100",
+      "value": "#f5f9fa",
+      "comment": "User profile, search"
+    },
+    {
+      "name": "$tc-soap--200",
+      "value": "#eef1f3",
+      "comment": ""
+    },
+    {
+      "name": "$tc-soap--300",
+      "value": "#e6ebee",
+      "comment": "File progress bar border."
+    },
+    {
+      "name": "$tc-soap--400",
+      "value": "#dae2e6",
+      "comment": ""
+    },
+    {
+      "name": "$tc-soap--500",
+      "value": "#cad4d9",
+      "comment": "Borders"
+    },
+    {
+      "name": "$tc-green-apple--400",
+      "value": "#1db543",
+      "comment": ""
+    },
+    {
+      "name": "$tc-island-punch--500",
+      "value": "#6345a1",
+      "comment": ""
+    },
+    {
+      "name": "$tc-cantaloupe--400",
+      "value": "#ffa126",
+      "comment": "Action buttons, Primary buttons"
+    },
+    {
+      "name": "$tc-cantaloupe--500",
+      "value": "#f38b00",
+      "comment": "Primary button hover, regional group button"
+    },
+    {
+      "name": "$tc-peach--500",
+      "value": "#de4721",
+      "comment": ""
+    },
+    {
+      "name": "$tc-orange--dark",
+      "value": "#ff7b47",
+      "comment": ""
+    },
+    {
+      "name": "$tc-orange--light",
+      "value": "#fff4f0",
+      "comment": ""
+    },
+    {
+      "name": "$tc-sour-lemon--100",
+      "value": "#fffae6",
+      "comment": ""
+    },
+    {
+      "name": "$tc-jewel--300",
+      "value": "#45c8d6",
+      "comment": "Legacy \"explore\" group button."
+    },
+    {
+      "name": "$tc-black",
+      "value": "#000",
+      "comment": ""
+    },
+    {
+      "name": "$tc-white",
+      "value": "#fff",
+      "comment": ""
+    },
+    {
+      "name": "$tc-twitter",
+      "value": "#1da1f2",
+      "comment": ""
+    },
+    {
+      "name": "$tc-linkedin",
+      "value": "#0077b5",
+      "comment": ""
+    },
+    {
+      "name": "$tc-facebook",
+      "value": "#3b5998",
+      "comment": ""
+    },
+    {
+      "name": "$tc-youtube",
+      "value": "#ff0000",
+      "comment": ""
+    },
+    {
+      "name": "$tc-instagram",
+      "value": "#e0114e",
+      "comment": ""
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$tc-</code> in <code>source/_patterns/00-base/05-colors/_colors.scss</code>"
+  }
+}

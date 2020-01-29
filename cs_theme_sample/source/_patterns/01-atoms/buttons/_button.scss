@@ -1,0 +1,339 @@
+// Padding is set to achieve 40px high large button, 24px high medium button.
+$button-primary-padding--large: 11px $sp-l;
+$button-primary-padding--medium: 3px $sp-m $sp-xxxs $sp-m;
+$button-secondary-padding--large: $sp-xs 33px;
+$button-secondary-padding--medium: $sp-xxxs 25px 5px 25px;
+$button-outlined-padding--large: 11px $sp-m;
+
+@mixin legacy-button($background-color: $c-background-primary, $hover: none) {
+  @include a-link($tc-white, $tc-white, none, none, $tc-white);
+  color: $tc-white;
+  border-radius: $sp-xl;
+  font-size: $fs-m;
+  font-weight: $fw-light;
+  padding: $sp-xs $sp-m;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  background-color: $background-color;
+  cursor: pointer;
+  outline: none;
+  @if ($hover) {
+    &:hover {
+      background-color: $hover;
+    }
+  }
+}
+
+@mixin button-baseline($font-color: $tc-white, $font-size: $fs-s) {
+  @include appearance(none);
+  font-weight: $fw-medium;
+  font-size: $font-size;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: $font-color;
+  border-radius: $sp-m;
+  line-height: 1;
+  margin-right: $sp-xs;
+}
+
+@mixin primary-button(
+  $padding: $button-primary-padding--large,
+  $font-size: $fs-s,
+  $focus-padding: $button-primary-padding--large) {
+  @include a-link($tc-white, $tc-white, none, none, $tc-white);
+  @include button-baseline();
+  font-size: $font-size;
+  padding: $padding;
+  border: solid 2px $c-button-primary-border;
+  background-color: $c-button-primary-bg;
+  &:hover {
+    background-color: $c-button-primary-bg--hover;
+    border: solid 2px $c-button-primary-border--hover;
+  }
+  &:focus {
+    border: solid 2px $c-border-primary--focus;
+    padding: $focus-padding;
+  }
+  &:disabled {
+    opacity: .4;
+    pointer-events: none;
+  }
+  &:active {
+    background-color: $c-button-primary-bg;
+    border-color: $c-button-primary-border;
+    padding: $padding;
+  }
+}
+
+@mixin secondary-button(
+  $padding: $button-secondary-padding--large,
+  $font-size: $fs-s,
+  $focus-padding: $button-primary-padding--large) {
+  @include a-link($c-text-primary, $c-text-primary, none, none, $c-text-primary);
+  @include button-baseline($c-text-primary);
+  font-size: $font-size;
+  padding: $padding;
+  border: solid 1px $c-button-secondary-border;
+  background-color: $c-button-secondary-bg;
+  &:hover {
+    background-color: $c-button-secondary-bg--hover;
+    border: solid 1px $c-button-secondary-border--hover;
+  }
+  &:focus {
+    border: solid 2px $c-border-primary--focus;
+    padding: $focus-padding;
+  }
+  &:disabled {
+    color: $c-text--disabled;
+    pointer-events: none;
+  }
+  &:active {
+    background-color: $c-button-secondary-bg;
+    border: solid 1px $c-button-secondary-border;
+    padding: $padding;
+  }
+}
+
+/**
+ * For use on dark backgrounds only.
+ */
+@mixin transparent-button(
+  $padding: $button-primary-padding--large,
+  $font-size: $fs-s,
+  $focus-padding: $button-primary-padding--large) {
+  @include a-link($c-button-transparent-text, $c-button-transparent-text--hover, none, none, $c-button-transparent-text);
+  @include button-baseline($c-button-transparent-text);
+  font-size: $font-size;
+  padding: $padding;
+  border: solid 1px $c-button-transparent-border;
+  background-color: $c-button-transparent-bg;
+  &:hover {
+    background-color: $c-button-transparent-bg--hover;
+    border: solid 1px $c-button-transparent-bg--hover;
+  }
+  &:focus {
+    background-color: $c-button-transparent-bg--hover;
+    border: solid 1px $c-button-transparent-border--active;
+    padding: $focus-padding;
+  }
+  &:disabled {
+    color: $c-text--disabled;
+    pointer-events: none;
+  }
+  &:active {
+    background-color: $c-button-transparent-bg--hover;
+    border: solid 1px $c-button-transparent-border--active;
+    padding: $padding;
+  }
+}
+
+@mixin outlined-button(
+  $padding: $button-outlined-padding--large,
+  $font-size: $fs-s,
+  $focus-padding: $button-outlined-padding--large) {
+  @include a-link($c-button-outlined-text, $c-button-outlined-text, none, none, $c-button-outlined-text);
+  @include button-baseline();
+  font-size: $font-size;
+  padding: $padding;
+  border: solid 2px $c-button-outlined-border;
+  background-color: $c-button-outlined-bg;
+  &:hover {
+    background-color: $c-button-outlined-bg--hover;
+    border: solid 2px $c-button-outlined-border;
+    color: $c-button-outlined-text--hover;
+  }
+  &:focus {
+    background-color: $c-button-outlined-bg--hover;
+    border: solid 2px $c-button-outlined-border;
+    color: $c-button-outlined-text--hover;
+    padding: $focus-padding;
+  }
+  &:disabled {
+    border: solid 2px $c-button-outlined-border--disabled;
+    color: $c-button-outlined-text--disabled;
+    cursor: default;
+    pointer-events: none;
+  }
+  &:active {
+    background-color: $c-button-outlined-bg--active;
+    border-color: $c-button-outlined-border--active;
+    color: $c-button-outlined-text--active;
+    padding: $padding;
+  }
+}
+
+@mixin rectangular-button($font-color, $bg-color, $border-color) {
+  @include a-link($font-color, $font-color, none, none, $font-color);
+  @include button-baseline($font-color);
+  padding: $button-secondary-padding--large;
+  border: 1px solid $border-color;
+  border-radius: 0;
+  background-color: $bg-color;
+  &:disabled {
+    opacity: .3;
+    pointer-events: none;
+  }
+}
+
+/* Set parent container to position: relative; for best effect. */
+@mixin trashcan-button() {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url('../images/trash.svg') no-repeat;
+  width: $sp-m;
+  height: $sp-m;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin-right: $sp-s;
+  margin-top: $sp-xs;
+  font-size: 0;
+
+  &:hover {
+    background-image: url('../images/trash-hover.svg');
+  }
+}
+
+/* Style a button as if it were a link. */
+@mixin button-as-link() {
+  border: none;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  line-height: normal;
+  color: $c-link-primary;
+
+  &:hover {
+    background: none;
+    border: none;
+    text-decoration: underline;
+    color: $c-link-primary--hover;
+  }
+}
+
+.button {
+
+  @include secondary-button();
+
+  &__primary {
+    @include primary-button();
+
+    &--medium {
+      @include primary-button($button-primary-padding--medium, $fs-xs, $button-primary-padding--medium);
+    }
+  }
+  &__secondary {
+    @include secondary-button();
+
+    &--medium {
+      @include secondary-button($button-secondary-padding--medium, $fs-xs, $button-primary-padding--medium);
+    }
+  }
+  &__transparent {
+    @include transparent-button();
+  }
+  &__apply {
+    @include outlined-button();
+
+    &--disabled {
+      @include outlined-button();
+      border: solid 2px $c-button-outlined-border--disabled;
+      color: $c-button-outlined-text--disabled;
+      cursor: default;
+      pointer-events: none;
+      &:link, &:visited, &:hover, &:active {
+        color: $c-button-outlined-text--disabled;
+      }
+    }
+  }
+
+  &__product-group {
+    @include rectangular-button($tc-white, $c-button-product-group, $c-button-product-group);
+  }
+
+  &__special-group {
+    @include rectangular-button($tc-white, $c-button-special-group, $c-button-special-group);
+  }
+
+  &__regional-group {
+    @include rectangular-button($tc-white, $c-button-regional-group, $c-button-regional-group);
+  }
+
+  &__professional-group {
+    @include rectangular-button($tc-white, $c-button-professional-group, $c-button-professional-group);
+  }
+
+  &__collapsing {
+    @include rectangular-button($c-text-primary, $c-button-collapse-expand, $c-button-collapse-expand);
+  }
+
+  &__today {
+    @include rectangular-button($c-text-primary, $c-button-calendar-today, $c-button-calendar-today);
+  }
+}
+
+.file-upload-button-container {
+  position: relative;
+  @include secondary-button();
+}
+
+.file-upload-button-description {
+  margin-left: $sp-s;
+}
+
+.input {
+  &__file-attachment {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+
+a.button {
+  @include appearance(none);
+}
+
+.user-login-form {
+  &__input-submit {
+    width: 100%;
+  }
+}
+
+.user-pass {
+  &__input-submit {
+    width: 100%;
+  }
+}
+
+.account-request-form {
+  &__input-submit {
+    width: 100%;
+    margin-bottom: $sp-xl;
+  }
+
+  @media screen and (min-width: $bp-xsmall) {
+    &__input-submit {
+      width: 100%;
+      margin-bottom: $sp-m;
+    }
+  }
+
+  .button--cancel {
+    width: 50%;
+    margin-left: 1em;
+  }
+}
+
+.block-local-actions-block {
+  list-style-type: none;
+}

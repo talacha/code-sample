@@ -1,0 +1,41 @@
+{#
+/**
+ * @file
+ * Default theme implementation for up/down voting display.
+ *
+ * Available variables:
+ * - widget_attributes: Attributes for outer div.
+ * - has_voted: Boolean if user has voted.
+ * - up_attributes: Attributes for up vote div.
+ * - up_url: Url to vote up.
+ * - score_attributes: Attributes for score display div.
+ * - score: Up votes minus down votes.
+ * - down_attributes: Attributes for down vote div.
+ * - down_url: Url to vote down.
+ * - score: Number of up votes.
+ * - undo: Link to undo placed vote.
+ * - undo_attributes: Attributes for undo div.
+ * - info_description: Extra textual info to display.
+ *
+ * @ingroup themeable
+ * @see template_preprocess_rate_template_number_up_down
+ * @see wdc_question_preprocess_rate_template_number_up_down
+ * @see phoenix_reborn_preprocess_rate_template_number_up_down
+ */
+#}
+{% include "@atoms_reborn/voting-widget/_voting-widget.twig"
+  with {
+    'has_voted': has_voted,
+    'can_vote': can_vote,
+    'widget_attributes': widget_attributes,
+    'up_attributes': up_attributes,
+    'up_url': up_url,
+    'score_attributes': score_attributes,
+    'score': score,
+    'down_attributes': down_attributes,
+    'down_url': down_url,
+    'undo': undo,
+    'undo_attributes': undo_attributes,
+    'info_description': info_description,
+  }
+%}

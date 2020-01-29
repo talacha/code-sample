@@ -1,0 +1,12 @@
+sidebar_region:
+  blocks:
+    -
+      "<div class=\"simple-block\"><h4 class=\"title__h4\">What is Lorem Ipsum?</h4><div class=\"simple-block__content\">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</div></div>"
+    -
+      "<div class=\"simple-block\"><h4 class=\"title__h4\">More Details</h4><div class=\"simple-block__content\"><div class=\"simple-field\"><div class=\"simple-field__label\">Calendar event type</div><div><div class=\"simple-field__item\">Operations - Production</div></div></div><div class=\"simple-field\"><div class=\"simple-field__label\">Release</div><div><div class=\"simple-field__item\">Workday 31</div></div></div><div class=\"simple-field\"><div class=\"simple-field__label\">Operation type</div><div><div class=\"simple-field__item\">Service update</div></div></div><div class=\"simple-field\"><div class=\"simple-field__label\">Data center</div><div><div class=\"simple-field__item\">Production - Ashburn</div><div class=\"simple-field__item\">Production - Dublin</div><div class=\"simple-field__item\">Production - Portland</div></div></div></div></div>"
+    -
+      "<randomelement>Completely random html element.</randomelement>"
+    -
+      "<div class=\"block\"><h4>Drupal block</h4><div class=\"content\">This block doesn't use the block pattern markup, and just has the default drupal classes.</div></div>"
+    -
+      "<div class=\"simple-block\"><h4 class=\"title__h4\">Last block</h4><div class=\"simple-block__content\">This block should not have a bottom margin or border.</div></div>"

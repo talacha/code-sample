@@ -1,0 +1,73 @@
+.group-membership-row {
+  border-bottom: 1px solid $tc-soap--500;
+  border-left: 4px solid transparent;
+
+  &.leader {
+    border-left: 4px solid $tc-cantaloupe--400;
+  }
+}
+
+.header {
+  font-size: $fs-s;
+  line-height: $fs-m;
+  font-weight: $fw-bold;
+  padding: $sp-xxs 0;
+}
+
+.more {
+  font-size: $fs-s;
+  line-height: $fs-xl;
+  color: $tc-blueberry--500;
+}
+
+.results-count {
+  color: $tc-licorice--300;
+  font-size: $fs-s;
+  line-height: $fs-m;
+}
+
+.view-group-members-container {
+  .group-membership-row {
+    display: grid;
+    grid-template-areas: "member products operations";
+    grid-template-columns: 45% 45% 10%;
+    padding: 14px 8px;
+
+    .member {
+      grid-area: member;
+    }
+
+    .products {
+      grid-area: products;
+    }
+
+    .operations {
+      grid-area: operations;
+    }
+
+    &-header {
+      padding: $sp-xxxs 0;
+    }
+  }
+}
+
+.header-row {
+  display: block;
+  position: relative;
+  padding: $sp-xxxs 0;
+
+  .inline-header {
+    &-left {
+      display: inline-block;
+      position: relative;
+    }
+
+    &-right {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+

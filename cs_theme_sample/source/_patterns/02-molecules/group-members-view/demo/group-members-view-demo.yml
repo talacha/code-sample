@@ -1,0 +1,168 @@
+rows:
+  - member:
+      username: 'Lnguyen_Selvakumaran'
+      name: 'Langston Nguyen'
+      type: 'Partner'
+      link: '#'
+      organization: 'Alight Solutions LLC'
+      is_admin: 'true'
+      reputation: 45
+      image:
+        src: 'https://picsum.photos/seed/1/128/128'
+    products:
+      - 'Banking'
+      - 'Financials'
+      - 'HCM'
+      - 'Benefit Plans'
+      - 'Services'
+      - 'Cross Application Services'
+      - 'Planning'
+      - 'Workday Operations'
+      - 'Student'
+      - 'Healthcare Industry'
+      - 'Something Else'
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Srichards'
+      name: 'Sarah Richards'
+      type: 'Customer'
+      link: '#'
+      organization: 'Alight Solutions LLC'
+      is_admin: 'true'
+      reputation: 200
+      image:
+        src: 'https://picsum.photos/seed/2/128/128'
+    products:
+      - 'Cross Application Services'
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Aaabbireddy'
+      name: 'Andy Aabbireddy'
+      type: 'Customer'
+      link: '#'
+      organization: 'Alight Solutions LLC'
+      is_admin: 'false'
+      reputation: 15
+      image:
+        src: 'https://picsum.photos/seed/3/128/128'
+    products: {}
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Aadams'
+      name: 'Anabelle Adams'
+      type: 'Customer'
+      link: '#'
+      image:
+        src: 'https://picsum.photos/seed/4/128/128'
+      reputation: 30
+    products:
+      - 'Banking'
+      - 'Financials'
+      - 'HCM'
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Alister'
+      name: 'Amy Alister'
+      link: '#'
+      reputation: 2
+      image:
+        src: 'https://picsum.photos/seed/5/128/128'
+    products: {}
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Amabel'
+      name: 'Langston Amabel'
+      link: '#'
+      is_admin: 'false'
+      reputation: 0
+      image:
+        src: 'https://picsum.photos/seed/6/128/128'
+    products: {}
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Arlntswot'
+      name: 'A Really Long Name To Showcase Wrapping or Trimming'
+      link: '#'
+      organization: 'Workday'
+      is_admin: 'false'
+      reputation: 12345
+      image:
+        src: 'https://picsum.photos/seed/7/128/128'
+    products: {}
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Ldolomet'
+      name: 'Lipsum Dolomet'
+      link: '#'
+      organization: 'Lipsum LLC'
+      reputation: 15
+      image:
+        src: 'https://picsum.photos/seed/8/128/128'
+    products: {}
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Cupcake'
+      name: 'Cupcake Lipsum'
+      link: '#'
+      image:
+        src: 'https://picsum.photos/seed/9/128/128'
+    products: {}
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'
+  - member:
+      username: 'Jdoe'
+      name: 'John Doe'
+      link: '#'
+      image:
+        src: 'https://picsum.photos/seed/10/128/128'
+    products: {}
+    operations:
+      links:
+        - text: 'Remove from Group'
+          href: '#'
+        - text: 'Grant Admin'
+          href: '#'

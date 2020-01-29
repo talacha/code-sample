@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: name of menu
+ * - link_style: inline or icon
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+{% set menu_class = 'tabs--'~menu_name %}
+
+{% if items %}
+  <div class="menu-sections__wrapper {{ menu_class }}">
+    {% for item in items %}
+      {# Hide the section if there are no visible links. #}
+      {% if item.below %}
+        {# Use Twig function to split menu into 3 columns #}
+        {% set columns = partition(item.below, 3) %}
+        <div class="menu-sections__section clearfix">
+          <h4>{{ item.title }}</h4>
+          <div class="menu-sections__column-wrapper">
+
+            {% for column in columns %}
+              {% include '@molecules_reborn/menu/_menu.twig' with {
+                'container_class': 'menu-sections__column',
+                'items': column,
+                'menu_level': 0,
+              }
+              %}
+
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+{% endif %}

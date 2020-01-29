@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "name": "$ff-roboto",
+      "value": "'Roboto', sans-serif",
+      "comment": ""
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$ff-</code> in <code>source/_patterns/00-base/15-typography/fonts/_fonts.scss</code>"
+  }
+}

@@ -1,0 +1,34 @@
+{#
+ Variables:
+  - Member: Rendereable object of the indexed user for this group.
+  - Products: Products supported by the indexed user.
+  - Operations: Array of links containing valid operations for the current row.
+#}
+{# Member #}
+<div class="group-membership-row {% if row.member and row.member.is_admin == 'true' %} leader{% endif %}">
+  <div class="column member">
+    {% if row.member %}
+      {% include '@atoms_reborn/member-card/_member_card.twig' with row.member %}
+    {% endif %}
+  </div>
+
+  {# Product Area #}
+  <div class="column products">
+    {% if row.products %}
+      {% for tag in row.products|slice(0, 10) %}
+        {% include '@atoms_reborn/tags/_tags.twig' with {'tag': tag} %}
+      {% endfor %}
+      {% if row.products|length > 10 %}<span class="more">+10</span>{% endif %}
+    {% endif %}
+  </div>
+
+  {# Operations #}
+  <div class="operations">
+    {% if row.operations %}
+      {% include '@atoms_reborn/buttons/_ellipsis.twig' with {
+        'label': row.operations.label,
+        'links': row.operations.links,
+      } %}
+    {% endif %}
+  </div>
+</div>

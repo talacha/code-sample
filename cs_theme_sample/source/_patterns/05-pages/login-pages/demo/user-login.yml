@@ -1,0 +1,30 @@
+page:
+  content:
+    form:
+      -
+        key: 'input-textfield'
+        title: "Username or Email"
+        attributes: ' id="required-textfield"'
+        label_display: 'before'
+        label:
+          attributes: ' for="required-textfield" class="input-label form-required input-label--required"'
+        element:
+          attributes:
+            required: "required"
+      -
+        key: 'input-password'
+        title: "Password"
+        attributes: ' id="required-password-field"'
+        label_display: 'before'
+        label:
+          attributes: ' for="required-password-field" class="input-label form-required input-label--required"'
+        element:
+          attributes:
+            required: "required"
+      -
+        key: 'button'
+        attributes: ' type="submit" class="button button__primary user-pass__input-submit" value="Sign In"'
+        children: ''
+    content_type: 'form'
+    attributes:
+      class: 'user-login-form'

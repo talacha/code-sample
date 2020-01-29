@@ -1,0 +1,18 @@
+{#
+ Variables:
+  - label: String. The label to show/hide the hover menu.
+  - links: Array. A list of links shown in the hover menu.
+  - link.href: String. The link to go to.
+  - link.text: String. The link label.
+  - alignment: String. 'left' or 'right'.
+#}
+<div class="dropdown {{ alignment|default('right') }}">
+  <button class="dropbtn">{{ label|default('&middot;&middot;&middot;') }}</button>
+  {% if links %}
+    <div class="dropdown-content">
+      {% for link in links %}
+        <a href="{{ link.href|default('#') }}" tabindex="-1" rel="nofollow">{{ link.text }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,6 @@
+{% set region_attributes = pl ? ' class="region--sidebar"' : attributes.addClass('region--sidebar') %}
+{% if content %}
+  <div{{ region_attributes }}>
+    {{ content }}
+  </div>
+{% endif %}

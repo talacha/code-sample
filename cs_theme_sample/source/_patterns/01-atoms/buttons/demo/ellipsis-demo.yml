@@ -1,0 +1,7 @@
+ellipsis:
+  - label: '&hellip;'
+    links:
+      - text: 'Remove from Group'
+        href: '#'
+      - text: 'Grant Admin'
+        href: '#'

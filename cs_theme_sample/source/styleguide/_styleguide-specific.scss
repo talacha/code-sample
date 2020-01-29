@@ -1,0 +1,364 @@
+/*------------------------------------*\
+    $PATTERN LAB-SPECIFIC STYLES
+\*------------------------------------*/
+/**
+ * This stylesheet is for styles you want to include only when the interface is being viewed within Pattern Lab.
+ * This is helpful for displaying demo styles for grids, animations, color swatches, etc
+ * It's also helpful for overriding context-specific styles like fixed or absolutely positioned elements
+ * These styles will not be your production CSS.
+ */
+
+pre {
+  margin-top: 0;
+}
+
+.u-demo-bg {
+  background-color: hsl(0, 0%, 80%);
+}
+
+.sg-spacer {
+  margin-bottom: $sp-m;
+}
+
+// Style Guide color swatches
+.sg-colors {
+  overflow: hidden;
+  margin: 5px;
+  padding: 0;
+  > li {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    padding: 0.8em;
+    margin: 0 0 10px;
+    box-sizing: border-box;
+    font-size: 12px;
+    .sg-swatch {
+      display: block;
+      height: 85px;
+      margin: 0 0 10px 0;
+      //float: left;
+      //width: 100%;
+      border: solid 1px $c-border-primary;
+    }
+    .sg-info {
+      line-height: 1;
+      font-weight: $fw-medium;
+      //float: right;
+      //width: 66%;
+    }
+    @media all and (min-width: 400px) {
+      float: left;
+      width: 39%;
+      margin: 1%;
+      .sg-swatch {
+        //height: 100px;
+      }
+    }
+    @media all and (min-width: 700px) {
+      width: 20%;
+      &:nth-child(4n+1) {
+        clear: both;
+      }
+    }
+  }
+}
+
+.sg-breakpoints {
+  overflow: hidden;
+  position: relative;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .breakpoints {
+    > li {
+      position: absolute;
+      border-left: solid 3px hsl(0, 0%, 35%);
+      height: 100%;
+      //      > .icon--arrow--right-medium {
+      //        font-size: 18px;
+      //        margin-top: 100px;
+      //      }
+      > .label {
+        //        @include transform(rotate(90deg));
+        //        @include transform-origin(bottom left);
+        display: block;
+        //        position: absolute;
+        //        bottom: 20px;
+        background: hsl(0, 0%, 35%);
+        padding: 3px;
+        color: white;
+      }
+      &:hover {
+        // stylelint-disable max-nesting-depth, selector-max-specificity
+        border-left-color: hsla(0, 0%, 35%, 0.3);
+        > .label {
+          opacity: 0;
+        }
+        // stylelint-enable max-nesting-depth, selector-max-specificity
+      }
+    }
+  }
+  .device_widths {
+    padding-top: 20px;
+    > li {
+      border-bottom: solid 3px hsl(0, 0%, 80%);
+      text-align: right;
+      margin-bottom: 15px;
+      padding-right: 15px;
+      border-right: solid 3px hsl(0, 0%, 80%);
+    }
+  }
+}
+
+.sg-font-sizes {
+  thead {
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid black;
+  }
+  th,
+  td {
+    text-align: left;
+    white-space: nowrap;
+    line-height: 1.5em;
+    &:first-child {
+      padding-right: 12px;
+    }
+  }
+}
+
+.sg-container {
+  margin: $sp-s;
+
+  .clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.sg-select-list {
+  .sg-select-list-header {
+    position: absolute;
+    top: 0;
+    left: 500px;
+  }
+}
+
+.sg-sidebar {
+  min-width: $gr-sidebar-width;
+  display: inline-block;
+  margin-right: 100px;
+}
+
+.sg-card {
+  border-radius: 2px;
+  background-color: $tc-white;
+  box-shadow: 0 2px 3px 0 $c-border-primary, inset 0 1px 0 0 $c-border-primary;
+  padding: $sp-s;
+  width: fit-content;
+}
+
+.sg-dashed-spacer {
+  margin-bottom: $sp-xl;
+  padding-bottom: $sp-l;
+  border-bottom: 2px dashed $tc-blueberry--500;
+  &:last-child {
+    padding-bottom: 0;
+    border: none;
+  }
+}
+
+.demo__block {
+  height: 200px;
+  background-color: rgba($tc-licorice--200, 0.5);
+}
+
+// Icons
+.icons-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.icons-demo {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.icons__item {
+  flex: auto;
+  padding: 0.3em;
+  margin: 0 0.5em 0.5em 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  line-height: 2em;
+  overflow: hidden;
+  &:last-child {
+    margin-bottom: 0.5em;
+  }
+}
+
+.icons__item i {
+  display: inline-block;
+  width: 32px;
+  text-align: center;
+}
+
+.demo .g .gi {
+  text-align: center;
+  outline: dotted 1px #ccc;
+}
+
+.links-demo {
+  border-collapse: collapse;
+
+  td {
+    padding: 24px;
+
+    &:not(:first-child) {
+      border-color: #ccc;
+      border-width: 1px;
+      border-style: solid;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  &-colorbox {
+    border: solid 1px #ccc;
+    &:after {
+      content: ' ';
+      padding: 10px;
+    }
+  }
+
+  &--normal {
+    .links-demo-colorbox {
+      background-color: $c-link-primary;
+    }
+  }
+
+  &--hover {
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &--visited {
+    a {
+      color: $c-link-primary--visited;
+    }
+    .links-demo-colorbox {
+      background-color: $c-link-primary--visited;
+    }
+  }
+}
+
+// Css-grid demo.
+$col-height-min: 150px;
+
+.sg-grid__mock-page {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-gap: $gr-gap;
+  grid-template-rows: repeat(4, minmax(150px, auto));
+  grid-template-areas: "header"
+    "featured"
+    "main-content"
+    "footer";
+  .mock-page__header {
+    grid-area: header;
+  }
+  .mock-page__featured {
+    grid-area: featured;
+  }
+  .mock-page__footer {
+    grid-area: footer;
+    .site-footer__container {
+      flex-direction: column;
+    }
+  }
+
+  .mock-page__main-fourth {
+    display: grid;
+    grid-gap: $gr-gap;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: minmax($col-height-min, auto);
+  }
+  .mock-page__main-third {
+    display: grid;
+    grid-gap: $gr-gap;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax($col-height-min, auto);
+  }
+  .mock-page__main-half {
+    display: grid;
+    grid-gap: $gr-gap;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax($col-height-min, auto);
+  }
+  .mock-page__main-full {
+    display: grid;
+    grid-gap: $gr-gap;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax($col-height-min, auto);
+  }
+
+  .layout__main {
+    margin-bottom: $gr-gap;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .sidebar {
+    width: $gr-sidebar-width;
+  }
+  .content {
+    background-color: rgba($tc-blue--light, 0.95);
+    border: 1px solid $tc-blue--light;
+    color: $tc-white;
+    padding: $sp-xs;
+    min-height: $col-height-min;
+    .title__h2 {
+      color: $tc-white;
+    }
+  }
+}
+
+.user-profile__list-item {
+  padding: 24px 0;
+}
+
+// Add some space around and between blocks in the block demo.
+.sg__blocks {
+  padding: $sp-s;
+  .simple-block {
+    margin-bottom: $sp-l;
+  }
+}
+
+.sg-login__container {
+  background: $tc-white;
+  @include breakpoint($bp-xsmall) {
+    background: linear-gradient(90deg, rgba(0, 93, 186, 0.97), rgba(11, 119, 227, 0.97));
+  }
+}
+
+.sg-dark-bg {
+  background: $tc-blueberry--500;
+}
+
+.sg-buttons {
+  .sg-dark-bg {
+    padding: 15px 5px;
+  }
+}

@@ -1,0 +1,6 @@
+page:
+  content:
+    title: 'Success'
+    body: 'An account request has been submitted. Additional information has been sent to psherman@wallaby.com.'
+    content_type: 'block'
+    attributes: {}

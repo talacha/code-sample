@@ -1,0 +1,92 @@
+.region--sidebar {
+  /* Add a bottom border with margins below each block other than the last. */
+  > *:not(:last-child)::after {
+    content: "";
+    display: block;
+    margin-top: $sp-l;
+    border-bottom: 1px solid $tc-soap--500;
+    margin-bottom: $sp-m;
+  }
+}
+
+// Resolves the margin spacing caused by WDC-35688. The margin was removed for
+// all simple-fields to fix info pages spacings. Here we have added a special
+// wrapper as part of the view definition for node details views. See
+// views.view.node_details.
+.node-details-block-wrapper {
+  .simple-field:last-child {
+    margin-bottom: $sp-s;
+  }
+}
+
+.region--sidebar-sticky {
+  border: 0 none;
+  box-shadow: 0 1px 5px rgba(134, 149, 158, 0.3);
+  // Padding-bottom will account for the height of the absolutely-positioned
+  // .filter-cta-box that will occupy that padding.
+  // Height of the box is top and bottom padding ($sp-s * 2) plus 40px height
+  // of the button plus 1px height of the top border.
+  padding: 0 0 #{($sp-s * 2) + 40px + 1px} 0;
+  position: relative;
+  min-height: 140px;
+
+  > *:not(:last-child)::after {
+    border: none;
+    display: none;
+    margin: 0;
+  }
+
+  .block {
+    margin: 0;
+    padding: $sp-s;
+  }
+
+  // If there is a search box above the list of facets, give it 0 bottom
+  // padding, so that the only padding is from the top of the first facet
+  // block below it.
+  > .block:first-child:not(.block--blockgroup) {
+    padding-bottom: 0;
+  }
+
+  .input-search {
+    margin: 0;
+  }
+
+  .block--blockgroup {
+    overflow: auto;
+    padding: 0;
+  }
+
+  .block-facets {
+    border-bottom: 1px solid $tc-soap--500;
+    margin: $sp-m;
+    padding: 0px 0px $sp-m 0px;
+
+    &:last-child {
+      border-bottom: 0 none;
+      padding: 0;
+    }
+  }
+
+  .filter-cta-box {
+    border-top: 1px solid $tc-soap--500;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    bottom: 0;
+    box-shadow: none;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+}
+
+.group-about-pages {
+  .region--sidebar {
+    margin-top: -110px;
+  }
+  .region--sidebar > *:not(:last-child)::after {
+    display: none;
+  }
+}

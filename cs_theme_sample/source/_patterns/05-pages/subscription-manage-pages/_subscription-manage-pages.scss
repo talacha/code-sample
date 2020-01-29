@@ -1,0 +1,366 @@
+// Ideally, we would actually have a container that both the menu tabs and the
+// Views exposed filters would be dropped into. Unfortunately, the subscription
+// management pages use the default displays, which prevent you from exposing
+// the filters as a block, so we cannot position those things together. Instead
+// we have to cobble together styles to give the appearance of an actual
+// container.
+.subscription-filters {
+  background: $c-background-secondary;
+  padding: $sp-m;
+
+  &__separator {
+    border-top: 1px solid $c-border-primary;
+    margin-bottom: $sp-m;
+  }
+
+  .tabs {
+    display: inline-block;
+
+    &__label {
+      display: inline-block;
+      margin-right: $sp-xl;
+      @include text-styles($fs-h4, $fw-bold, $lh-regular);
+    }
+
+    &__item {
+      border: none;
+      @include text-styles($fs-h5, $fw-regular, $lh-regular);
+
+      a {
+        margin-right: $sp-m;
+        margin-left: 0;
+        text-transform: none;
+      }
+
+      &--is-active a {
+        border: 2px solid $c-border-primary--focus;
+        border-radius: 4px;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.subscription-view {
+  .view-filters {
+    background: $c-background-secondary;
+    padding: 0 $sp-m $sp-m $sp-m;
+
+    // This bottom margin *probably* would be more appropriate as part of a
+    // pattern for View pages, but since we're starting with a one-off, it's
+    // hard to tell if this really should be done everywhere or if this is also
+    // a one-off.
+    margin-bottom: $sp-xl;
+
+    .form-type-select>label, .fieldset-legend {
+      border: none;
+      margin-bottom: $sp-s;
+      @include text-styles($fs-l, $fw-bold, 1.2);
+      display: inline-block;
+    }
+  }
+
+  // Under normal circumstances, we should only be adding bottom margin to
+  // enforce gaps between elements, but in this case we can't tell from the
+  // element above (secondary tabs) whether we should be adding margin, so we
+  // have no choice but to add it as a top margin to the lower element.
+  &--no-filters {
+    margin-top: $sp-xl;
+  }
+
+  &,
+  &--no-filters {
+    .wdc-dropbutton {
+      margin-bottom: $sp-xl;
+      width: 50%;
+      display: inline-block;
+
+      .fieldgroup {
+        margin-bottom: $sp-s;
+      }
+    }
+  }
+
+  .chosen-container-multi {
+    width: 400px !important; /* stylelint-disable-line */
+  }
+  .input-search__input--legacy {
+    border-radius: 20px;
+    float: right;
+    padding: 8px 10px 8px 40px;
+    width: 250px;
+  }
+  .input-search.form-element {
+    float: right;
+  }
+  .user-profile__display-name {
+    font-weight: normal;
+    font-size: $fs-s;
+  }
+
+  .user-profile__user-name {
+    font-weight: normal;
+    letter-spacing: 0.5px;
+  }
+
+  .user-profile__item {
+    font-size: 12px;
+  }
+
+  .form-checkboxes--horizontal {
+    margin-left: 0;
+    legend {
+      padding-inline-start: 0;
+    }
+  }
+
+}
+
+.view-add-subscription-user,
+.view-subscribe-user-email {
+  // Center the checkbox relative to the user profile image.
+  .views-table__field--user-bulk-form {
+    padding-top: 40px;
+  }
+}
+.view-add-subscription-user {
+  margin-top: $sp-xl;
+  .view-filters {
+    display: none;
+  }
+}
+
+.block--page-title-block.subscription_page_title {
+  display: block;
+  margin-bottom: $sp-m;
+}
+
+.block--wdc-subscription-unsubscribe-link {
+  display: block;
+  margin-bottom: $sp-m;
+}
+
+// Specific overrides to basic views tree table styles
+// For it's implementation in both my and add
+// subscription tags views
+.view-add-subscription-taxonomy-term {
+  tr {
+    &.has-children td {
+      border-bottom: none;
+    }
+
+    &.expanded td {
+      padding-bottom: 4px;
+    }
+  }
+
+  [data-hierarchy-level="2"] {
+    //display: none;
+
+    td {
+      border-bottom: none;
+      border-top: none;
+      padding: 5px 8px;
+
+      &.views-tree-hierarchy-cell {
+        padding-left: 61px;
+      }
+    }
+  }
+
+  [data-hierarchy-level="3"] {
+    //display: none;
+
+    td {
+      border-bottom: none;
+      border-top: none;
+      padding: 5px 8px;
+
+      &.views-tree-hierarchy-cell {
+        padding-left: 87px;
+      }
+    }
+  }
+}
+
+.level-1-has-children {
+  .views-tree-hierarchy-cell {
+    background: url('../images/chevron-right-active.svg') no-repeat scroll 9px 16px;
+    background-size: auto 18px;
+    padding-left: 35px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &.expanded {
+    .views-tree-hierarchy-cell {
+      background: url('../images/chevron-down-active.svg') no-repeat scroll 5px 13px;
+      background-size: 24px auto;
+    }
+
+    td {
+      border-bottom: none;
+    }
+  }
+}
+
+.level-2-has-children {
+  .views-tree-hierarchy-cell {
+    background: url('../images/chevron-right-active.svg') no-repeat scroll 36px 5px;
+    background-size: auto 18px;
+
+    &.expanded {
+      background: url('../images/chevron-down-active.svg') no-repeat scroll 30px 3px;
+      background-size: 24px auto;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+tr.level-2-no-children {
+  .views-tree-hierarchy-cell {
+    padding-left: 61px;
+  }
+}
+
+.view-add-subscription-taxonomy-term .child .views-field-vid {
+  display: none;
+}
+
+// Styles for My Subscriptions - Tags View.
+.view-subscribe-taxonomy-term-email {
+  th.views-field-name {
+    width: 450px;
+  }
+
+  .views-tree-table td.views-tree-hierarchy-cell {
+    background: none;
+    padding-left: 7px;
+  }
+
+  tr.level-2,
+  tr.level-3 {
+    td {
+      border-width: 1px 0;
+      padding: $sp-s $sp-xxs;
+    }
+  }
+}
+
+ul.wdc-message-term-hierarchy > li.has-children > span {
+  background: url('../images/chevron-right-active.svg') no-repeat scroll 0 -2px;
+  background-size: auto 18px;
+  padding-left: 28px;
+
+  &.expanded {
+    background: url('../images/chevron-down-active.svg') no-repeat scroll -2px -4px;
+    background-size: 24px auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+ul.wdc-message-term-hierarchy {
+  ul {
+    padding-bottom: 8px;
+    padding-left: 28px;
+    padding-top: 12px;
+
+    li {
+      margin-bottom: 13px;
+    }
+  }
+}
+
+ul.wdc-message-term-hierarchy li.has-children > span {
+  background: url('../images/chevron-right-active.svg') no-repeat scroll 0 -2px;
+  background-size: auto 18px;
+  padding-left: 28px;
+
+  &.expanded {
+    background: url('../images/chevron-down-active.svg') no-repeat scroll -2px -4px;
+    background-size: 24px auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+li.wdc-message-has-child-terms {
+  ul {
+    padding-bottom: 0;
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+li.wdc-message-has-child-terms > span {
+  background: url('../images/chevron-right-active.svg') no-repeat scroll 0 -2px;
+  background-size: auto 18px;
+
+  &.expanded {
+    background: url('../images/chevron-down-active.svg') no-repeat scroll -2px -4px;
+    background-size: 24px auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+span.wdc-message-term-item:not(.wdc-message-top-level) {
+  padding-left: 28px;
+}
+
+.user-subscription-settings-form {
+  > fieldset{
+    border: 0px;
+    padding: $sp-xs 0px $sp-xxs 0px;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .fieldset-legend {
+    font-weight: bold;
+  }
+  legend {
+    padding: 0px;
+  }
+  .subscription-preferences-fields {
+    .my_subscription_link {
+      margin-top: -$sp-m;
+      margin-left: 25px;
+      margin-bottom: $sp-m;
+    }
+
+    .field--name-message-subscribe-email,
+    .field--name-message-digest{
+      display: inline-block;
+    }
+  }
+
+  .form-actions {
+    margin-top: $sp-m;
+  }
+
+  .form-element {
+    margin-bottom: 20px;
+  }
+
+  .form_title {
+    margin-bottom: $sp-l;
+  }
+}

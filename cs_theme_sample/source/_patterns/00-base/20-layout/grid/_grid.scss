@@ -1,0 +1,308 @@
+//
+// @group layout
+//
+
+// Define our Grid gap for CSS-Grid.
+$gr-gap: $sp-xl;
+$gr-padding: $sp-m;
+
+// Grid widths based on breakpoints. From _breakpoints.scss.
+$gr-l: $bp-large;
+$gr-m: $bp-medium;
+$gr-s: $bp-small;
+$gr-xs: $bp-xsmall;
+
+// Column widths. Columns once maxed will add spacing.
+$gr-sidebar-width: 320px;
+$gr-col-fourth-max: 282px;
+$gr-col-third-max: 384px;
+$gr-col-half-max: 588px;
+$gr-col-full-max: 1200px;
+
+// Grid for site layout.
+.layout__container {
+  display: grid;
+  min-width: $gr-m;
+  width: 100%;
+  /* min-height is bugged in IE11, it has no effect which means content that
+   does not fill the viewport will continue to not do so, which is not good.
+   Assigning a height will fix layout for pages where content does not fill
+   viewport, but break for content longer than viewport.  That leaves the column
+   calculation as the final resort.  The current figure is arrived by this math:
+   80px header + 57px breadcrumb + 150px footer + 24px grid gap = 311px.
+   min-height works for other browsers, so this calculation is only really
+   meaningful for IE11.  */
+  grid-template-rows: auto auto auto auto auto auto minmax(calc(100vh - 345px), 1fr) auto;
+  grid-template-columns: 100%;
+  min-height: 100vh;
+  grid-template-areas: "header"
+    "alert"
+    "featured"
+    "header-top"
+    "breadcrumb"
+    "header-bottom"
+    "main-content"
+    "footer";
+
+  .site__header {
+    grid-area: header;
+    @include ie-11-grid-place-rows-columns(1);
+    min-width: $gr-m;
+  }
+  .region-alert {
+    grid-area: alert;
+    @include ie-11-grid-place-rows-columns(2);
+  }
+  .region-header-top {
+    grid-area: header-top;
+    @include ie-11-grid-place-rows-columns(4);
+  }
+  .region-breadcrumb {
+    grid-area: breadcrumb;
+    @include ie-11-grid-place-rows-columns(5);
+  }
+  .region-header-bottom {
+    grid-area: header-bottom;
+    @include ie-11-grid-place-rows-columns(6);
+  }
+
+  .region-featured {
+    grid-area: featured;
+    @include ie-11-grid-place-rows-columns(3);
+  }
+  .region-content,
+  .layout__main {
+    grid-area: main-content;
+    @include ie-11-grid-place-rows-columns(7);
+
+    // No grid gap if there are no sidebars.  Just add a margin bottom.
+    &--no-sidebar {
+      grid-gap: 0;
+      margin-bottom: $gr-gap;
+      grid-template-columns: 100%;
+    }
+  }
+
+  .site__footer {
+    grid-area: footer;
+    @include ie-11-grid-place-rows-columns(8);
+  }
+
+  .user-login-pages & {
+    // Allow fully-responsive behavior for the login pages only;
+    // don't enforce the 1024px min-width used on other pages.
+    min-width: 0;
+  }
+}
+
+// Page Main Section Grid
+.layout__main {
+  max-width: $gr-col-full-max + ($gr-padding * 2); // Making room for the padding.
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $gr-padding; // Prevents content from touching browser edge.
+  display: grid;
+  grid-gap: $gr-gap;
+
+  .layout__content {
+    grid-row: 1; // Prevents empty #main-content div from taking up vertical space (Chrome)
+  }
+}
+
+.block--wdc-archive-message {
+  background-color: $tc-black-pepper--300;
+}
+
+.layout__main--sidebar-first--sidebar-second {
+  grid-template-areas: "sidebar-first main sidebar-second";
+  grid-template-columns: auto 1fr auto;
+  .layout__sidebar--first {
+    grid-area: sidebar-first;
+    @include ie-11-grid-place-rows-columns(false, 1);
+  }
+  .layout__sidebar--second {
+    grid-area: sidebar-second;
+    @include ie-11-grid-place-rows-columns(false, 3);
+  }
+  .layout__content {
+    grid-area: main;
+    @include ie-11-grid-place-rows-columns(false, 2);
+  }
+}
+
+.layout__main--sidebar-first,
+.layout__main--sidebar-second {
+  .layout__sidebar--first,
+  .layout__sidebar--second {
+    grid-area: sidebar;
+  }
+  .layout__content {
+    grid-area: main;
+    /* IE11 "grid gap". */
+    @include ie-11-only {
+      margin-bottom: $gr-gap;
+    }
+  }
+}
+
+.layout__main--sidebar-first {
+  .layout__sidebar--first {
+    @include ie-11-grid-place-rows-columns(false, 1);
+    /* IE11 "grid gap". */
+    @include ie-11-only {
+      margin-right: $gr-gap;
+      margin-bottom: $gr-gap;
+    }
+  }
+  .layout__content {
+    @include ie-11-grid-place-rows-columns(false, 2);
+  }
+}
+
+.layout__main--sidebar-second {
+  .layout__sidebar--second {
+    @include ie-11-grid-place-rows-columns(false, 2);
+    /* IE11 "grid gap". */
+    @include ie-11-only {
+      margin-left: $gr-gap;
+      margin-bottom: $gr-gap;
+    }
+  }
+  .layout__content {
+    @include ie-11-grid-place-rows-columns(false, 1);
+  }
+}
+
+.layout__main--sidebar-first {
+  grid-template-areas: "sidebar main";
+  grid-template-columns: auto 1fr ;
+}
+
+.layout__main--sidebar-second {
+  grid-template-areas: "main sidebar";
+  grid-template-columns: 1fr auto;
+}
+
+// Grid for node content area.
+.layout__main--sidebar-second {
+  .region-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas: ". message"
+      "vote title"
+      "vote tabs"
+      "vote help"
+      "vote content";
+
+    .messages {
+      grid-area: message;
+      @include ie-11-grid-place-rows-columns(1, 2);
+    }
+
+    .block--page-title-block {
+      grid-area: title;
+      @include ie-11-grid-place-rows-columns(2, 2);
+      padding: 0;
+      margin: 0;
+    }
+
+    .block--local-tasks-block,
+    .block-local-tasks-block {
+      grid-area: tabs;
+      @include ie-11-grid-place-rows-columns(3, 2);
+    }
+
+    .voting-widget-node-wrapper {
+      grid-area: vote;
+      @include ie-11-grid-place-rows-columns(2, 1);
+      -ms-grid-row-span: 2;  /* stylelint-disable-line */
+      margin-right: $sp-m;
+      width: $sp-xl;
+    }
+
+    .block--help-block {
+      grid-area: help;
+      @include ie-11-grid-place-rows-columns(4, 2);
+    }
+
+    .node-wrapper {
+      grid-area: content;
+      @include ie-11-grid-place-rows-columns(5, 2);
+    }
+  }
+}
+
+// Set width on the sidebars so the main content will expand freely.  This is
+// here as it's apart of the layout of the page, not just the sidebar styling.
+.layout__sidebar--first,
+.layout__sidebar--second {
+  width: $gr-sidebar-width;
+}
+
+// Front Page Layout.
+.content__row {
+  &--front {
+    > * {
+      max-width: $gr-col-full-max + ($gr-padding * 2); // Making room for the padding.
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 $gr-padding; // Prevents content from touching browser edge.
+    }
+  }
+  &--border-bottom {
+    > * {
+      border-bottom: 1px solid $c-border-primary;
+    }
+  }
+  &--homepage-card {
+    display: flex;
+    margin: 0 auto;
+    padding: 0 $sp-m;
+    max-width: $gr-col-full-max + ($gr-padding * 2); // Making room for the padding.
+
+    .wdc-homepage-card {
+      &:first-child {
+        padding-right: $sp-xs;
+      }
+      &:last-child {
+        padding-left: $sp-xs;
+      }
+    }
+  }
+  &--background {
+    background-color: $c-background-tertiary;
+  }
+  &--advanced-menu {
+    padding-top: $sp-xl;
+    // Padding-bottom of the final .menu-sections__section (32px)
+    // plus $sp-s (16px) = 48px from the spec.
+    padding-bottom: $sp-s;
+
+    .title__h3 {
+      line-height: 1.3;
+    }
+  }
+}
+
+// Layout for content which occupies 50% of space in container.
+.layout__main--half {
+  .layout__content--half {
+    display: grid;
+    grid-template-areas: "left-column right-column";
+    grid-template-columns: 1fr 1fr;
+    @include ie-add-col-grid-gap-repeat(2, 1fr, $gr-gap);
+    grid-template-rows: 100%;
+    grid-gap: $gr-gap;
+
+    .column__left {
+      grid-area: left-column;
+      @include ie-11-grid-place-rows-columns(1, 1);
+    }
+
+    .column__right {
+      grid-area: right-column;
+      @include ie-11-grid-place-rows-columns(1, 3);
+    }
+  }
+}

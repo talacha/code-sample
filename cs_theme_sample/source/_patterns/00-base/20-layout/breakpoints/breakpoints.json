@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "name": "$bp-xsmall",
+      "value": "577px",
+      "comment": ""
+    },
+    {
+      "name": "$bp-small",
+      "value": "769px",
+      "comment": ""
+    },
+    {
+      "name": "$bp-medium",
+      "value": "1025px",
+      "comment": ""
+    },
+    {
+      "name": "$bp-large",
+      "value": "1441px",
+      "comment": ""
+    }
+  ],
+  "meta": {
+    "description": "To add to these items, use Sass variables that start with <code>$bp-</code> in <code>source/_patterns/00-base/20-layout/breakpoints/_breakpoints.scss</code>"
+  }
+}

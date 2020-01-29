@@ -1,0 +1,10 @@
+.list-pages {
+  .layout__content {
+    border-left: 1px solid $c-border-primary;
+  }
+  &--with-sticky-sidebar {
+    .layout__content {
+      border-left: none;
+    }
+  }
+}

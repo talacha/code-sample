@@ -1,0 +1,15 @@
+<div class="upcoming-calendar-event">
+    <div>{% if event_date %} {{ event_date }} {% endif %}</div>
+    <div class="calendar-info">
+        <div>
+            {% if event_date %} {{ event_title}} {% endif %}
+        </div>
+        <div class="views-field-metadata">
+            <time>
+                {% if field_event_date_value %} {{ field_event_date_value|date('g:i a') }} {% endif %}
+                -
+                {% if field_event_date_value %} {{ field_event_date_end_value|date('g:i a T') }} {% endif %}
+            </time>
+        </div>
+    </div>
+</div>

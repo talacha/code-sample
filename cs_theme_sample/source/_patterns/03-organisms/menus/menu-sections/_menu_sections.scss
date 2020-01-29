@@ -1,0 +1,36 @@
+.menu-sections {
+
+  &__wrapper {
+    a {
+      @include a-link($c-text-primary, $c-link-primary--hover, none, none, $c-text-primary);
+    }
+
+    .menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__section {
+    margin-top: $sp-m;
+    padding-bottom: $sp-l;
+    border-bottom: 1px solid $c-border-primary;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__column-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__column {
+    width: 300px;
+    margin-right: $sp-l;
+    float: left;
+  }
+
+}

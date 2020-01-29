@@ -1,0 +1,13 @@
+<div class="content__row--front">
+
+  <nav class="contextual-region block block-menu navigation menu--products" role="navigation">
+    {# Handle block title separately for PL only. #}
+    {% embed '@organisms_reborn/menus/menu-sections/_menu-sections.twig' with {
+      'items': items,
+      'attributes': [],
+      'menu_name': 'advanced',
+    }
+    %}
+    {% endembed %}
+  </nav>
+</div>

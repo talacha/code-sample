@@ -1,0 +1,139 @@
+// IE11 specific utilties.
+
+/* Specify rules which will be limited to just IE11. */
+@mixin ie-11-only() {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
+/**
+ * IE11 mixin to designate where to place rows and columns.
+ *
+ * IE11 by default places all grid items in the first row and first column of
+ * the grid.  This allows for the grid to get manually set.
+ *
+ * @param $row
+ *   Optionally indicate which row a grid item belongs in.
+ * @param $column
+ *   Optionally indicate which column a grid item belongs in.
+ */
+@mixin ie-11-grid-place-rows-columns($row: false, $column: false) {
+  @if ($row) {
+    -ms-grid-row: $row;  /* stylelint-disable-line */
+  }
+  @if ($column) {
+    -ms-grid-column: $column;  /* stylelint-disable-line */
+  }
+}
+
+/**
+ * Provides a grid template rule with grid gap for IE11.  Columns only.
+ *
+ * @param $numCols
+ *   The number of columns to repeat in the template..
+ * @param $colWidth
+ *   The width of each column.
+ * @param $gridGap
+ *   The grid gap to add between each column.
+ */
+@mixin ie-add-col-grid-gap-repeat($numCols, $colWidth, $gridGap) {
+  $columnTemplate: $colWidth;
+  @if ($numCols > 1) {
+    @for $col from 1 through $numCols {
+      @if ($col < $numCols) {
+        $columnTemplate: $columnTemplate $gridGap $colWidth;
+      }
+    }
+  }
+  -ms-grid-columns: $columnTemplate; /* stylelint-disable-line */
+}
+
+/**
+ * Provides a grid template rule with grid gap for IE11.  Rows only.
+ *
+ * @param $numRows
+ *   The number of rows to repeat in the template..
+ * @param $rowHeight
+ *   The width of each row.
+ * @param $gridGap
+ *   The grid gap to add between each row.
+ */
+@mixin ie-add-row-grid-gap-repeat($numRows, $rowHeight, $gridGap) {
+  $rowTemplate: $rowHeight;
+  @if ($numRows > 1) {
+    @for $row from 1 through $numRows {
+      @if ($row < $numRows) {
+        $rowTemplate: $rowTemplate $gridGap $rowHeight;
+      }
+    }
+  }
+  -ms-grid-rows: $rowTemplate; /* stylelint-disable-line */
+}
+
+/**
+ * Calculates grid placement for items for IE11.
+ *
+ * @param $items
+ *   The maximum number of items to set into the grid.  Exceeding the actual
+ *   count is ok, but adds more CSS.
+ * @param $wrap-on
+ *   The number of items before wrapping to a new column.
+ * @param $hasColGridGap
+ *   Whether or not there is a grid gap associated with the columns.
+ * @param $hasColGridGap
+ *   Whether or not there is a grid gap associated with th rows.
+ */
+@mixin ie-grid-calculator($items: 50, $wrap-on: 4, $hasColGridGap: false, $hasRowGridGap: false) {
+  $current-row: 1;
+  $current-col: 1;
+
+  @for $item from 1 through $items {
+    @if $current-col > $wrap-on {
+      $current-col: 1;
+      @if($hasRowGridGap) {
+        $current-row: $current-row + 2;
+      }
+      @else {
+        $current-row: $current-row + 1;
+      }
+    }
+
+    // Alternate columns to simulate grid gap in IE11.
+    @if ($hasColGridGap) {
+      @if ($current-col % 2 == 0) {
+        $current-col: $current-col + 1;
+      }
+    }
+
+    &:nth-child(#{$item}) {
+      -ms-grid-row: $current-row; /* stylelint-disable-line */
+      -ms-grid-column: $current-col; /* stylelint-disable-line */
+    }
+
+    $current-col: $current-col + 1;
+  }
+}
+
+/**
+ * IE11 grid alignment.  Applies to immediate children of grid container only!
+ *
+ * @param $row
+ *   The alignment rule for the row.
+ * @param $column
+ *   The alignment rule for the column.
+ */
+@mixin ie-grid-align($row: center, $column: center) {
+  -ms-grid-row-align: $row; /* stylelint-disable-line */
+  -ms-grid-column-align: $column; /* stylelint-disable-line */
+}
+
+/**
+ * IE11 grid row.
+ *
+ * @param $row
+ * The row number.
+ */
+@mixin ie-grid-row($row) {
+  -ms-grid-row: $row; /* stylelint-disable-line */
+}

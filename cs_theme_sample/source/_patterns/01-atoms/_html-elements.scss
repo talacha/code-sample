@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+// IE 11 fix ~ http://stackoverflow.com/a/26207036
+main {
+  display: block;
+}
+
+// Pick up some needed style fixes from normalize.css for select lists.
+select {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}

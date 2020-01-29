@@ -1,0 +1,8 @@
+<div class="container">
+  <h1 class="title__h1">Member Card Variations</h1>
+  <div class="member-card-demo">
+    {% for member in members %}
+      {% include '@atoms_reborn/member-card/_member_card.twig' with member %}
+    {% endfor %}
+  </div>
+</div>

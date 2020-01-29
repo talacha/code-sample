@@ -1,0 +1,26 @@
+.profile-page {
+
+  .layout {
+    &__content {
+      background-color: $c-background-tertiary;
+    }
+
+    &__main {
+      max-width: initial;
+      padding: 0;
+    }
+  }
+
+  .block-local-tasks-block {
+    padding-top: 25px;
+  }
+
+  .user-profile__head {
+    background-color: $c-background-tertiary;
+  }
+
+  .user-profile__body {
+    background-color: $c-background-primary;
+    padding-top: 30px;
+  }
+}

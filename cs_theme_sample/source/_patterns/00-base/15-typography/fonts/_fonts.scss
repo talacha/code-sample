@@ -1,0 +1,49 @@
+//  Font family
+//  -----------
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+$ff-roboto: 'Roboto', sans-serif;
+$ff-heading: $ff-roboto;
+$ff-body: $ff-roboto;
+
+//  Font weight
+//  -----------
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+//  Font sizes
+//  ----------
+$fs-xxxl: 28px;
+$fs-xxl: 24px;
+$fs-xl: 20px;
+$fs-l: 18px;
+$fs-m: 16px;
+$fs-s: 14px;
+$fs-xs: 13px;
+$fs-xxs: 12px;
+$fs-xxxs: 11px;
+$fs-icon: 32px;
+
+//  Heading font sizes
+//  ------------------
+//  Use these variables for heading and title contexts. For other context
+//  you should use the "$fs" variables under "Font sizes" (above)
+$fs-h1: $fs-xxxl;
+$fs-h2: $fs-xxl;
+$fs-h3: $fs-xl;
+$fs-h4: $fs-l;
+$fs-h5: $fs-m;
+$fs-h6: $fs-m;
+
+//  Heading font sizes
+//  ------------------
+$lh-regular: 1.5;
+
+//  Body
+//  ----
+$fs-body: $fs-s;
+
+//  Description
+//  -----------
+$fs-description: $fs-xs;

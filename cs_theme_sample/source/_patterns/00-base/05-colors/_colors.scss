@@ -1,0 +1,208 @@
+//  Theme colors
+//  ------------
+//  Before using these theme colors (colors starting with "$tc-") look at the
+//  "Semantic Color Mapping" section below. For globally used items you must use
+//  an existing semantic variable instead of a "$tc-" color.
+
+//  Blueberry
+//  ---------
+$tc-blueberry--100: #d7eafc;
+$tc-blueberry--300: #40a0ff;
+$tc-blueberry--400: #0875e1;
+$tc-blueberry--500: #005cb9; // Input, borders
+
+//  Blue (todo: To be deprecated)
+//  ----
+$tc-blue--light: #40b4e5; // Mega menu, breadcrumbs
+$tc-blue--rich-electric: #1889c8; // Hover color for main menu button.
+$tc-blue--lighter: #eff9fd;
+
+//  Black pepper
+//  ------------
+$tc-black-pepper--100: #787878; // Text links (in metadata), tabs, facets
+$tc-black-pepper--200: #616161;
+$tc-black-pepper--300: #4a4a4a; // Headings, body
+$tc-black-pepper--400: #333333;
+
+//  Licorice
+//  --------
+$tc-licorice--100: #a1aab3; // Input, borders
+$tc-licorice--200: #7b858f; // Placeholder, metadata
+$tc-licorice--300: #5e6a75; // Placeholder, metadata
+$tc-licorice--500: #333d47; // Icon hover, breadcrumb link text
+$tc-licorice--600: #1f2623; // Footer Background
+
+//  Soap
+//  ----
+$tc-soap--100: #f5f9fa; // User profile, search
+$tc-soap--200: #eef1f3;
+$tc-soap--300: #e6ebee; // File progress bar border.
+$tc-soap--400: #dae2e6;
+$tc-soap--500: #cad4d9; // Borders
+
+//  Green apple
+//  -----------
+$tc-green-apple--400: #1db543;
+
+//  Island punch
+//  ------------
+$tc-island-punch--500: #6345a1;
+
+//  Cantaloupe
+//  ----------
+$tc-cantaloupe--400: #ffa126; // Action buttons, Primary buttons
+$tc-cantaloupe--500: #f38b00; // Primary button hover, regional group button
+
+//  Peach
+//  -----
+$tc-peach--500: #de4721;
+
+//  Orange (todo: To be deprecated)
+//  ------
+$tc-orange--dark: #ff7b47;
+$tc-orange--light: #fff4f0;
+
+//  Sour Lemon
+$tc-sour-lemon--100: #fffae6;
+
+//  Jewel
+//  -----
+$tc-jewel--300: #45c8d6;  // Legacy "explore" group button.
+
+//  B & W
+//  -----
+$tc-black: #000;
+$tc-white: #fff;
+
+//  Social Media
+//  -----
+$tc-twitter: #1da1f2;
+$tc-linkedin: #0077b5;
+$tc-facebook: #3b5998;
+$tc-youtube: #ff0000;
+$tc-instagram: #e0114e;
+
+//  Semantic Color Mapping
+//  -----------------------
+//  The purpose is to facilitate site-wide changes on globally used items.
+//
+//   1. Typography
+//   2. Borders
+//   3. Backgrounds
+//   4. Links
+//   5. Alerts
+//   6. Buttons
+//   7. Radio
+//   8. Checkbox
+//   9. Icons
+
+
+//  1. Typography
+//  -------------
+$c-text-primary: $tc-black-pepper--300; // Headings, body
+$c-text-secondary: $tc-licorice--200; // Placeholder, metadata
+$c-text-tertiary: $tc-licorice--100; // Facet counts.
+$c-text--disabled: $tc-soap--500; // Disabled text.
+
+//  2. Borders
+//  ----------
+$c-border-primary: $tc-soap--500; // Borders
+$c-border-primary--focus: $tc-blueberry--500; // Input, borders
+$c-border-primary--hover: $tc-licorice--100; // Input, borders
+$c-border-error: $tc-peach--500; // Input, borders
+$c-border-sidebar: $tc-blueberry--400; // Facets sidebar
+
+//  3. Backgrounds
+//  --------------
+$c-background-primary: $tc-white; // Form fields, header, menus
+$c-background-secondary: $tc-soap--100; // User profile, search
+$c-background-tertiary: $tc-soap--200; // dropdown menu items, chosen menu items
+
+//  4. Links
+//  --------
+$c-link-primary: $tc-blueberry--500;
+$c-link-primary--hover: $tc-blueberry--500;
+$c-link-primary--visited: $tc-island-punch--500;
+$c-link-secondary: $tc-black-pepper--100; // Text links (in metadata), tabs, facets
+$c-link-secondary--active: $tc-black-pepper--200;
+$c-link-secondary--hover: $tc-black-pepper--200;
+$c-link-tertiary: $tc-black-pepper--300; // Main navigation
+
+//  5. Alerts
+//  ---------
+$c-alert--success: $tc-green-apple--400;
+$c-alert--warning: $tc-cantaloupe--400;
+$c-alert--error: $tc-peach--500;
+
+//  6. Buttons
+//  ----------
+//  Primary button colors.
+$c-button-primary-bg: $tc-cantaloupe--400;
+$c-button-primary-bg--hover: $tc-cantaloupe--500;
+$c-button-primary-border: $tc-cantaloupe--400;
+$c-button-primary-border--hover: $tc-cantaloupe--500;
+$c-button-primary-text: $tc-white;
+
+//  Secondary button colors.
+$c-button-secondary-bg: $tc-soap--100;
+$c-button-secondary-bg--hover: $tc-soap--500;
+$c-button-secondary-border: $tc-soap--500;
+$c-button-secondary-border--hover: $tc-licorice--200;
+$c-button-secondary-text: $tc-black-pepper--300;
+
+// Transparent button colors.
+$c-button-transparent-bg: transparent;
+$c-button-transparent-bg--hover: $tc-white;
+$c-button-transparent-border: $tc-white;
+$c-button-transparent-border--active: $tc-cantaloupe--400;
+$c-button-transparent-text: $tc-white;
+$c-button-transparent-text--hover: $tc-blueberry--500;
+
+//  Outlined button colors.
+$c-button-outlined-bg: $tc-white;
+$c-button-outlined-bg--hover: $tc-blueberry--400;
+$c-button-outlined-bg--active: $tc-blueberry--500;
+$c-button-outlined-border: $tc-blueberry--400;
+$c-button-outlined-border--active: $tc-blueberry--500;
+$c-button-outlined-border--disabled: $tc-soap--500;
+$c-button-outlined-text: $tc-blueberry--400;
+$c-button-outlined-text--hover: $tc-white;
+$c-button-outlined-text--active: $tc-white;
+$c-button-outlined-text--disabled: $tc-soap--500;
+
+// Special cases for button colors.
+$c-button-special-group: $tc-green-apple--400;
+$c-button-professional-group: $tc-jewel--300;
+$c-button-regional-group: $tc-cantaloupe--500;
+$c-button-product-group: $tc-blue--light;
+$c-button-collapse-expand: $tc-soap--500;
+$c-button-calendar-today: $tc-soap--500;
+
+// Main menu colors.
+$c-button-main-menu: $tc-blue--light;
+$c-button-main-menu--hover: $tc-blue--rich-electric;
+$c-megamenu-subheading: $tc-cantaloupe--400;
+
+//  7. Radio
+//  --------
+$c-radio--default: $tc-white;
+$c-radio--active: $tc-blueberry--500;
+$c-radio--hover: $tc-soap--100;
+$c-radio--disabled: $tc-soap--200;
+$c-radio-dot--active: $tc-soap--100;
+$c-radio-dot--disabled: $tc-soap--200;
+
+//  8. Checkbox
+//  -----------
+$c-checkbox--default: $c-radio--default;
+$c-checkbox--active: $c-radio--active;
+$c-checkbox--hover: $c-radio--hover;
+$c-checkbox--disabled: $c-radio--disabled;
+
+//  9. Input Fields
+//  ---------------
+$c-input-field-bg-primary: $tc-white;
+
+//  10. Icons
+//  --------
+//  @todo

@@ -1,0 +1,24 @@
+
+$z-index: (
+  // Dialog & modal overlay need to be high enough to outrank the admin menu.
+  dialog: 2001,
+  modalOverlay: 2000,
+  toolbar: 90,
+  navFixed: 80,
+  tooltip: 70,
+  popover: 60,
+  dropdown: 50,
+  nav: 50,
+  contentTop: 40,
+  content: 30,
+  contentBottom: 20,
+  // Use only for items that are layered within their own container.  E.g. when
+  // layering an element directly on top of another.
+  selfContained: 1,
+);
+
+// useage:
+// .class { z-index: z("dialog"); }
+@function z($key) {
+  @return map-get($z-index, $key)
+}

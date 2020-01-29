@@ -1,0 +1,35 @@
+// Apply uniform margins and line-height for CKEditor fields
+// that do not have our new classes.
+
+// Note the font size is to replicate Phoenix's.
+// We're trying to have minimal impact on exiting node headers.
+
+// Imports title-text mixin from 00-base/15-typography/headings/headings.scss
+.text-formatted {
+  // Technically h1 should not be showing up,
+  // but if they do they'll be styled like an h2.
+  h1, h2 {
+    font-size: $fs-xl;
+    font-weight: $fw-bold;
+    line-height: 1.17;
+    margin-bottom: $sp-xxs;
+  }
+  h3 {
+    font-size: $fs-l;
+  }
+  h4 {
+    font-size: $fs-m;
+  }
+  h5 {
+    font-size: $fs-s;
+  }
+  h6 {
+    font-size: $fs-xs;
+  }
+  p, ol, ul, table {
+    @include text-styles($fs-body, $fw-regular, $lh-regular);
+  }
+  li {
+    line-height: $lh-regular;
+  }
+}

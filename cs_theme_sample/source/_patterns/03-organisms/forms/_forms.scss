@@ -1,0 +1,11 @@
+.form-required {
+  @include label-required;
+}
+// Hide the apply button on specific views exposed forms in a block.
+.hide-apply-button-views-exposed-form div[data-drupal-selector=edit-actions] {
+  /**
+   * This is needed instead of `display: none`. Otherwise, IE11 will not submit
+   * forms with more than one input using the enter key.
+   */
+  @include visibility-hidden();
+}

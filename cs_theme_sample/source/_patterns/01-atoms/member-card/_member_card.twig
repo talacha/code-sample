@@ -1,0 +1,47 @@
+{#
+Variables:
+  link: String. URI to the user's profile page.
+  username: String. Username of the user.
+  name: String. Full name of the user.
+  organization: String. Name of the organization the user belongs to.
+  image: Object.
+    - image.src: String. URI to the resource.
+  reputation: Integer.
+  is_admin: Bool. True if the user is a group admin or leader of the current group.
+#}
+{% set reputation = reputation|default(0) %}
+{# ToDo: Determine what to do with unrealistically large numbers here #}
+{% set reputation = (reputation > 999) ? (reputation / 1000)|round(0, 'floor') ~ 'K+' : reputation %}
+<div class="group-member-wrapper">
+  <aside class="group-member-aside left">
+    {% if image.src %}
+      <img class="member-display-image" src="{{ image.src }}">
+    {% endif %}
+    <div class="member-reputation">{{ reputation }}</div>
+  </aside>
+  <div class="group-member-details">
+    {% if is_admin == 'true' %}
+      <div class="member-leadership">{{ "Group Leader"|t }}</div>
+    {% endif %}
+    {% if username %}
+      <div class="member-username">
+        {% if link %}
+        <a href="{{ link }}" rel="nofollow" target="_blank" {% if name %}title="{{ name }}"{% endif %}>
+          {% endif %}
+          {{ username }}
+          {% if link %}
+        </a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if name %}
+      <div class="member-name">{{ name }}</div>
+    {% endif %}
+    {% if type %}
+      <div class="member-type">{{ type }}</div>
+    {% endif %}
+    {% if organization %}
+      <div class="member-organization">{{ organization }}</div>
+    {% endif %}
+  </div>
+</div>

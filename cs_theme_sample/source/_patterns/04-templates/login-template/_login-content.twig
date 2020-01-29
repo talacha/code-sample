@@ -1,0 +1,19 @@
+{% if content_type == 'form' %}
+  {% set form_attributes = ' class="' ~ attributes.class ~ '"' %}
+  {% embed "@molecules_reborn/forms/_form-container.twig" with {
+    'modifier': 'login',
+    'attributes': form_attributes,
+    'form' : main_content.form
+  } %}
+  {% endembed %}
+{% else %}
+
+  {% embed "@molecules_reborn/login-message/_login-message.twig" with {
+    'modifier': 'login',
+    'message_title': main_content.title,
+    'message_text': main_content.body,
+
+  } %}
+  {% endembed %}
+
+{% endif %}

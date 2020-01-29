@@ -1,0 +1,124 @@
+inputs:
+  -
+    heading: 'Input buttons'
+    attributes: ' type="submit" class="button button__primary" value="Primary button"'
+    children: ''
+    dark_bg: false
+  -
+    attributes: ' type="submit" class="button button__secondary" value="Secondary button"'
+    children: ''
+    dark_bg: false
+  -
+    attributes: ' type="submit" class="button button__transparent" value="Transparent button"'
+    children: ''
+    dark_bg: true
+  -
+    attributes: ' type="submit" class="button button__primary--medium" value="Primary medium button"'
+    children: ''
+    dark_bg: false
+  -
+    attributes: ' type="submit" class="button button__secondary--medium" value="Secondary medium button"'
+    children: ''
+    dark_bg: false
+  -
+    heading: 'Disabled input buttons'
+    attributes: ' type="submit" class="button button__primary" disabled="disabled" value="Primary button"'
+    children: ''
+    dark_bg: false
+  -
+    attributes: ' type="submit" class="button button__secondary" disabled="disabled" value="Secondary button"'
+    children: ''
+    dark_bg: false
+  -
+    attributes: ' type="submit" class="button button__transparent" disabled="disabled" value="Transparent button"'
+    children: ''
+    dark_bg: true
+  -
+    attributes: ' type="submit" class="button button__primary--medium" disabled="disabled" value="Primary medium button"'
+    children: ''
+    dark_bg: false
+  -
+    attributes: ' type="submit" class="button button__secondary--medium" disabled="disabled" value="Secondary medium button"'
+    children: ''
+    dark_bg: false
+  -
+    heading: 'File attachment button'
+    attributes: ' type="file" id="file-upload-custom" class="js-form-file form-file input__file-attachment"'
+    children: ''
+    dark_bg: false
+links:
+  -
+    heading: 'Links styled as buttons'
+    attributes: ' class="button button-action button__primary"'
+    text: 'Primary link as button'
+    dark_bg: false
+  -
+    attributes: ' class="button button-action button__secondary"'
+    text: 'Secondary link as button'
+    dark_bg: false
+  -
+    attributes: ' class="button button-action button__transparent"'
+    text: 'Transparent link as button'
+    dark_bg: true
+  -
+    attributes: ' class="button button-action button__apply"'
+    text: 'Apply link as button'
+    dark_bg: false
+  -
+    attributes: ' class="button button-action button__apply--disabled"'
+    text: 'Disabled apply link as button'
+    dark_bg: false
+  -
+    attributes: ' class="button button-action button__primary--medium"'
+    text: 'Primary link as button medium'
+    dark_bg: false
+  -
+    attributes: ' class="button button-action button__secondary--medium"'
+    text: 'Secondary link as button medium'
+    dark_bg: false
+buttons:
+  -
+    heading: '&#60button&#62 elements'
+    attributes: ' class="button button__primary"'
+    text: 'Primary button'
+    dark_bg: false
+  -
+    attributes: ' class="button button__secondary"'
+    text: 'Secondary button'
+    dark_bg: false
+  -
+    attributes: ' class="button button__transparent"'
+    text: 'Transparent button'
+    dark_bg: true
+  -
+    attributes: ' class="button button__primary--medium"'
+    text: 'Primary medium button'
+    dark_bg: false
+  -
+    attributes: ' class="button button__secondary--medium"'
+    text: 'Secondary medium button'
+    dark_bg: false
+specials:
+  -
+    heading: 'Special cases'
+  -
+    attributes: ' class="button button__product-group"'
+    text: 'Explore'
+  -
+    attributes: ' class="button button__special-group"'
+    text: 'Explore'
+  -
+    attributes: ' class="button button__regional-group"'
+    text: 'Explore'
+  -
+    attributes: ' class="button button__professional-group"'
+    text: 'Explore'
+  -
+    attributes: ' class="button__collapsing"'
+    text: 'Expand All'
+  -
+    attributes: ' class="button__collapsing" disabled="disabled"'
+    text: 'Collapse All'
+  -
+    attributes: ' class="button today-button button__today"'
+    text: 'Today'

@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Pattern Lab theme.
+ */
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function cs_theme_sample_theme_suggestions_page_alter(&$suggestions, $variables) {
+  // Style the log in page.
+  $is_login_page = _phoenix_reborn_check_if_login_page();
+  if ($is_login_page) {
+    $suggestions[] = 'page__user__login';
+  }
+}

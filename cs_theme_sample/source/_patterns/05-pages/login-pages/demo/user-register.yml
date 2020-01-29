@@ -1,0 +1,91 @@
+page:
+  content:
+    content_type: 'form'
+    attributes:
+      class: 'account-request-add-form account-request-form'
+    form:
+      -
+        key: 'title'
+        title: 'Request New Account'
+        heading: 'h3'
+        name: 'title__h3'
+      -
+        key: 'input-textfield'
+        title: "First name"
+        attributes: ''
+        label_display: 'before'
+        label:
+          attributes: 'class="input-label form-required input-label--required"'
+        element:
+          attributes:
+            required: "required"
+      -
+        key: 'input-textfield'
+        title: "Last name"
+        attributes: ''
+        label_display: 'before'
+        label:
+          attributes: 'class="input-label form-required input-label--required"'
+        element:
+          attributes:
+            required: "required"
+      -
+        key: 'input-email'
+        title: 'Business email address'
+        attributes: ' id="required-textfield" class="input-email js-form-item form-item form-element"'
+        label_display: 'before'
+        label:
+          attributes: ' for="required-textfield" class="input-label form-required input-label--required"'
+        element:
+          attributes:
+            required: "required"
+      -
+        key: 'form-select'
+        title: 'Preferred language'
+        attributes: ' id="select-with-label"'
+        label_display: 'before'
+        label:
+          attributes: ' for="select-with-label" class="input-label"'
+        options:
+          -
+            selected: true
+            type: option
+            value: en
+            label: English
+          -
+            selected: false
+            type: option
+            value: ar
+            label: Arabic
+          -
+            selected: false
+            type: option
+            value: 'zh-hans'
+            label: 'Chinese, Simplified'
+          -
+            selected: false
+            type: option
+            value: 'zh-hant'
+            label: 'Chinese, Traditional'
+          -
+            selected: false
+            type: option
+            value: 'cs'
+            label: 'Czech'
+      -
+        key: 'textarea'
+        title: 'Reason for Account Request'
+        element:
+          resizable: 'none'
+          attributes: ' class="input-textarea__textarea resize-none field--name-reason" rows="5" cols="60"'
+        form_attributes: ' class="example-form-textarea"'
+        label_display: 'before'
+        label:
+          attributes: 'for="edit_message" class="input-label"'
+      -
+        key: 'button'
+        attributes: ' type="submit" class="account-request-form__input-submit button button__primary" value="Submit"'
+        children: ''
+        cancel_link:
+          title: 'Cancel'
+          url: '#'

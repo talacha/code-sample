@@ -1,0 +1,37 @@
+{
+  "scssColors": {
+    "h-blue": {
+      "base": "rgb(0, 92, 185)",
+      "light": "rgb(64, 180, 229)",
+      "lighter": "rgb(238, 241, 243)"
+    },
+    "h-gray": {
+      "darkest": "rgb(0, 0, 0)",
+      "darker": "rgb(51, 51, 51)",
+      "base": "rgb(74, 74, 74)",
+      "lightest": "rgb(255, 255, 255)"
+    },
+    "h-blue-gray": {
+      "dark": "rgb(63, 78, 89)",
+      "base": "rgb(134, 149, 158)",
+      "light": "rgb(158, 170, 176)",
+      "lighter": "rgb(218, 226, 230)",
+      "lightest": "rgb(230, 243, 255)"
+    },
+    "h-purple": {
+      "base": "rgb(99, 69, 161)"
+    },
+    "h-green": {
+      "base": "rgb(29, 181, 67)",
+      "light": "rgb(61, 194, 105)",
+      "lightest": "rgb(245, 249, 234)"
+    },
+    "h-orange": {
+      "base": "rgb(255, 161, 38)"
+    },
+    "h-red": {
+      "base": "rgb(222, 71, 33)",
+      "light": "rgb(255, 123, 71)"
+    }
+  }
+}

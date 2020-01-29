@@ -1,0 +1,173 @@
+/// Mixin - Set Link Colors & Decoration
+/// @param $link
+/// @param $hover
+/// @param $deco
+/// @param $deco--hover
+@mixin a-link($link: $c-link-primary, $hover: none, $deco: none, $deco--hover: underline, $visited: $c-link-primary--visited) {
+  &:link {
+    color: $link;
+    text-decoration: $deco;
+  }
+  &:visited {
+    color: $visited;
+    text-decoration: $deco;
+  }
+  @if ($hover) {
+    &:hover,
+    &:focus,
+    &:active {
+      color: $hover;
+      text-decoration: $deco--hover;
+    }
+  }
+}
+
+/// Mixin - descriptions.
+@mixin form-description() {
+  font-size: $fs-description;
+  font-weight: $fw-regular;
+  color: $c-text-secondary;
+  line-height: $lh-regular;
+}
+
+// Mixin - labels
+@mixin form-label($weight) {
+  font-size: $fs-body;
+  margin-left: 0.5em;
+  vertical-align: top;
+  color: $c-text-primary;
+  font-weight: $weight;
+  text-align: left;
+  overflow: auto;
+}
+
+@mixin label-required {
+  &::after {
+    content: '';
+    vertical-align: super;
+    display: inline-block;
+    background-image: url(../images/required.svg);
+    background-repeat: no-repeat;
+    background-size: 6px 6px;
+    width: 6px;
+    height: 6px;
+    margin: 0 0.3em;
+  }
+}
+
+// Mixin - borders and backgrounds for radio and checkboxes.
+@mixin form-input-borders($bg-color, $border-color, $border-radius: $sp-xxxl) {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: $border-radius;
+  background-color: $bg-color;
+  border: solid 1px $border-color;
+}
+
+// Mixin - Metadata text styles
+@mixin metadata-text() {
+  font-weight: $fw-regular;
+  font-size: $fs-description;
+  color: $c-text-secondary;
+  line-height: $lh-regular;
+}
+
+// Mixin to apply caption styles to an element.
+@mixin title-caption() {
+  @include text-styles($fs-description, $fw-regular, $lh-regular);
+}
+
+// This will adjust the base HTML font size fluidly between the xsmall and
+// xxlarge breakpoints to a font size between 14px minimum to 18px maximum.
+html {
+  // @include fluid-type(font-size, $bp-xsmall, $bp--xxlarge, 14px, 18px);
+}
+
+// Chrome user agent sets this to normal.  Change it back to 1.5 to match the
+// body rule.
+input {
+  line-height: $lh-regular;
+}
+
+// Imports text-styles mixin from 00-base/15-typography/headings/headings.scss
+body, p, .title__p {
+  @include text-styles($fs-body, $fw-regular, $lh-regular);
+  word-wrap: break-word;
+}
+.title__p--bold {
+  @include text-styles($fs-body, $fw-bold, $lh-regular);
+}
+.title__caption {
+  @include title-caption();
+}
+
+textarea {
+  // Clear up extra space under textareas that comes from the browser.
+  vertical-align: top;
+  // Provide resizing classes for textarea.
+  &.resize-none {
+    resize: none;
+  }
+  &.resize-vertical {
+    resize: vertical;
+    min-height: 2em;
+  }
+  &.resize-horizontal {
+    resize: horizontal;
+    max-width: 100%;
+  }
+  &.resize-both {
+    resize: both;
+    max-width: 100%;
+    min-height: 2em;
+  }
+}
+
+blockquote {
+  font-style: italic;
+  border-left: solid 3px $c-border-primary;
+  margin-left: $sp-m;
+  padding-left: $sp-m;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+hr {
+  border-style: solid;
+  border-width: 1px 0 0;
+  color: currentColor;
+}
+
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+// inline code wrappers, Markdown style
+code {
+  &:before {
+    content: '`';
+  }
+  &:after {
+    content: '`';
+  }
+  // don't show it when in a block of code
+  pre & {
+    &:after,
+    &:before {
+      content: '';
+    }
+  }
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
